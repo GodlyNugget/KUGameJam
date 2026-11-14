@@ -20,6 +20,7 @@ public partial class player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
+			//eeheh
 			//velocity += GetGravity() * (float)delta;
 		}
 
