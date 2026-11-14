@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dne2p8emjfh1m"]
+
+[ext_resource type="Script" uid="uid://bqkeu7b3kotys" path="res://TreatBoosts/Treat.cs" id="1_wyjko"]
+[ext_resource type="Texture2D" uid="uid://dqpwcw0wxlxhd" path="res://sprites/small_treat.png" id="2_ft7ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxtrw"]
+atlas = ExtResource("2_ft7ot")
+region = Rect2(158, 0, 79, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p68i7"]
+atlas = ExtResource("2_ft7ot")
+region = Rect2(79, 0, 79, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l27mc"]
+atlas = ExtResource("2_ft7ot")
+region = Rect2(0, 0, 79, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3owqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxtrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p68i7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l27mc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="LittleTreat" type="Area2D" unique_id=2066846949]
+script = ExtResource("1_wyjko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226775208]
+shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=374509685]
+position = Vector2(0, 1)
+scale = Vector2(0.42857143, 0.42857143)
+sprite_frames = SubResource("SpriteFrames_3owqy")
