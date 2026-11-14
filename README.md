@@ -1,4 +1,4 @@
-win scree art
-loose screen art
-boat functionality (scrip + .tscn)
-treat functionality with global speed
+* win screen art
+* loose screen art
+* boat functionality (script)
+* treat functionality with global speed
