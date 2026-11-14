@@ -28,9 +28,9 @@ public partial class player : CharacterBody2D
 		{
 			velocity.Y += JumpVelocity;
 		}
-		Velocity = velocity;
+        Velocity = velocity;
 
-		Globals.SetPlayerSpeedX((float)200);
+        Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 	}
 }

@@ -22,4 +22,15 @@ public partial class TerrainManager : Node2D
 		Floor1.Position -= new Vector2(PlayerSpeed * (float)delta, 0);
 		Floor2.Position -= new Vector2(PlayerSpeed * (float)delta, 0);
 	}
+
+	private void TerrainLeftScreen(bool FloorNum)
+	{
+		if (FloorNum)
+		{
+			Floor1.Position = new Vector2((float)1542, 0);
+		} else if (!FloorNum)
+		{
+			Floor2.Position = new Vector2((float)1542, 0);
+		}
+	}
 }
