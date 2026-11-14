@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class player : CharacterBody2D
+public partial class Player : CharacterBody2D
 {
 	public const float Speed = 2000.0f;
 	public const float JumpVelocity = -400.0f;
@@ -34,5 +34,9 @@ public partial class player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+
+	//somekind of flying/glyding method
+
 
 }
