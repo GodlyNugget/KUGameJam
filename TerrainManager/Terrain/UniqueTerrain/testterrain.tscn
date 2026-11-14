@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://buo08kqonkx3p"]
+
+[ext_resource type="Script" uid="uid://b0t7ly1rdfcu0" path="res://TerrainManager/Terrain/Terrain.cs" id="1_ekedr"]
+[ext_resource type="PackedScene" uid="uid://dne2p8emjfh1m" path="res://TreatBoosts/LittleTreat.tscn" id="2_bdctw"]
+[ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="3_apcxe"]
+[ext_resource type="PackedScene" uid="uid://cylt3eo1yp882" path="res://Enemies/lurker_enemy.tscn" id="4_ekedr"]
+[ext_resource type="PackedScene" uid="uid://ri0g15skhydl" path="res://Enemies/chomper_enemy.tscn" id="5_bdctw"]
+[ext_resource type="PackedScene" uid="uid://de5bf37k0kfey" path="res://Enemies/grouded_enemy.tscn" id="6_apcxe"]
+[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="7_d3673"]
+[ext_resource type="PackedScene" uid="uid://cq7xdgvb6753m" path="res://Enemies/weird_enemy.tscn" id="8_y5vf5"]
+[ext_resource type="PackedScene" uid="uid://bbyxns3l1g2ru" path="res://Enemies/speedy_enemy.tscn" id="9_yo1od"]
+[ext_resource type="PackedScene" uid="uid://dmkrvm7v7tqks" path="res://Enemies/crab_jawn.tscn" id="10_24iyd"]
+[ext_resource type="PackedScene" uid="uid://ca45ikkwwt17g" path="res://TerrainManager/Terrain/UniqueTerrain/fake_treat_enemy.tscn" id="11_d3673"]
+
+[sub_resource type="Gradient" id="Gradient_4lthi"]
+offsets = PackedFloat32Array(0, 0.68028843, 0.68990386, 1)
+colors = PackedColorArray(0.05690778, 0.47377402, 0.44506764, 1, 0.271001, 0.69286674, 0.9491897, 1, 0.7945443, 0.8478975, 0.7536133, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lb4cc"]
+gradient = SubResource("Gradient_4lthi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyddd"]
+atlas = ExtResource("7_d3673")
+region = Rect2(284, 0, 284, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11aur"]
+atlas = ExtResource("7_d3673")
+region = Rect2(0, 0, 284, 179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3owqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyddd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11aur")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Terrain" type="Node2D" unique_id=2130390171]
+script = ExtResource("1_ekedr")
+
+[node name="Objects" type="Node2D" parent="." unique_id=2111354121]
+
+[node name="forrerence(hide)" type="Sprite2D" parent="Objects" unique_id=1108029954]
+position = Vector2(0, 207.248)
+rotation = -1.5707968
+scale = Vector2(8.468, 1985.28)
+texture = SubResource("GradientTexture1D_lb4cc")
+
+[node name="LittleTreat3" parent="Objects" unique_id=2066846949 instance=ExtResource("2_bdctw")]
+position = Vector2(-258, 342)
+
+[node name="LittleTreat4" parent="Objects" unique_id=474508336 instance=ExtResource("2_bdctw")]
+position = Vector2(-340, 390)
+
+[node name="LittleTreat5" parent="Objects" unique_id=1904311371 instance=ExtResource("2_bdctw")]
+position = Vector2(-404, 328)
+
+[node name="LittleTreat6" parent="Objects" unique_id=1954468873 instance=ExtResource("2_bdctw")]
+position = Vector2(-485, 392)
+
+[node name="LittleTreat2" parent="Objects" unique_id=324630190 instance=ExtResource("3_apcxe")]
+position = Vector2(107, 723)
+
+[node name="LittleTreat" parent="Objects" unique_id=1945212111 instance=ExtResource("3_apcxe")]
+position = Vector2(-7, 753)
+
+[node name="Lurker_enemy" parent="Objects" unique_id=1162571999 instance=ExtResource("4_ekedr")]
+position = Vector2(267, 733)
+
+[node name="Chomper_enemy" parent="Objects" unique_id=1479383847 instance=ExtResource("5_bdctw")]
+position = Vector2(470, 331)
+
+[node name="Grouded_enemy" parent="Objects" unique_id=1387158507 instance=ExtResource("6_apcxe")]
+position = Vector2(-774, 1280)
+
+[node name="Terain" type="Node2D" parent="Objects" unique_id=395460296]
+position = Vector2(755, 1312)
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Objects/Terain" unique_id=1039624668]
+position = Vector2(0, -420)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3owqy")
+
+[node name="Weird_enemy" parent="Objects" unique_id=544081586 instance=ExtResource("8_y5vf5")]
+position = Vector2(755, 1312)
+
+[node name="Speedy_enemy" parent="Objects" unique_id=1211703272 instance=ExtResource("9_yo1od")]
+position = Vector2(687, 637)
+
+[node name="Crab_jawn" parent="Objects" unique_id=1583318307 instance=ExtResource("10_24iyd")]
+position = Vector2(-54, 973)
+
+[node name="Fake_treat_enemy" parent="Objects" unique_id=75785416 instance=ExtResource("11_d3673")]
+position = Vector2(-536, 1257)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
+rect = Rect2(-768, -64, 1536, 128)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="EmitExitedScreen"]

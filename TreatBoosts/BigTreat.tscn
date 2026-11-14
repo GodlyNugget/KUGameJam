@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://bn12ey2sms1av"]
 
 [ext_resource type="Script" uid="uid://bqkeu7b3kotys" path="res://TreatBoosts/Treat.cs" id="1_ox1k1"]
+[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="2_8xcfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tn1g"]
+atlas = ExtResource("2_8xcfr")
+region = Rect2(0, 0, 134, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3owqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tn1g")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
-size = Vector2(32, 32)
+size = Vector2(36, 36)
 
-[node name="LittleTreat" type="Area2D" unique_id=2066846949]
+[node name="BigTreat" type="Area2D" unique_id=2066846949]
 script = ExtResource("1_ox1k1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1629606886]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=42300326]
+scale = Vector2(0.32, 0.32)
+sprite_frames = SubResource("SpriteFrames_3owqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226775208]
 shape = SubResource("RectangleShape2D_3owqy")

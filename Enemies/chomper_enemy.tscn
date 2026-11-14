@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ri0g15skhydl"]
+
+[ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="1_tfksj"]
+
+[node name="Chomper_enemy" type="Node2D" unique_id=1479383847]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294392118]
+texture = ExtResource("1_tfksj")

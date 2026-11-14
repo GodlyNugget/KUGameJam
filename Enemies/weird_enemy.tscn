@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cq7xdgvb6753m"]
+
+[ext_resource type="Texture2D" uid="uid://dahyti0x7g7as" path="res://sprites/jelly.png" id="1_yyd5p"]
+
+[node name="Weird_enemy" type="Node2D" unique_id=544081586]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=347730790]
+position = Vector2(-1017.0003, -693)
+texture = ExtResource("1_yyd5p")

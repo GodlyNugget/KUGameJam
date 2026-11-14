@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ca45ikkwwt17g"]
+
+[ext_resource type="Texture2D" uid="uid://brkxh1eieldt" path="res://sprites/fake_treater.png" id="1_dqr6g"]
+
+[node name="Fake_treat_enemy" type="Node2D" unique_id=75785416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1601152041]
+position = Vector2(19.999998, -93)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_dqr6g")

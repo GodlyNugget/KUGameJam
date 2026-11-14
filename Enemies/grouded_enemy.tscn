@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://de5bf37k0kfey"]
+
+[ext_resource type="Texture2D" uid="uid://rl152dhlivad" path="res://sprites/mine.png" id="1_k0442"]
+
+[node name="Grouded_enemy" type="Node2D" unique_id=1387158507]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=947787332]
+position = Vector2(0, -269)
+scale = Vector2(2, 2)
+texture = ExtResource("1_k0442")

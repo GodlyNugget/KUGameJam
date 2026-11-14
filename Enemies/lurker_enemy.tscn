@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cylt3eo1yp882"]
+
+[ext_resource type="Texture2D" uid="uid://bf4sb453xn7l4" path="res://sprites/muncher.png" id="1_e4470"]
+
+[node name="Lurker_enemy" type="Node2D" unique_id=1162571999]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=701776943]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_e4470")
