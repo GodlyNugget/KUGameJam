@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\njs23\\OneDrive\\Documents\\GitHub\\KUGameJam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\users\\njs23\\onedrive\\documents\\github\\kugamejam\\losescreen\\lose_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:losescreen\\lose_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "lose_screen.cs",
+              "DocumentMoniker": "C:\\Users\\njs23\\OneDrive\\Documents\\GitHub\\KUGameJam\\LoseScreen\\lose_screen.cs",
+              "RelativeDocumentMoniker": "LoseScreen\\lose_screen.cs",
+              "ToolTip": "C:\\Users\\njs23\\OneDrive\\Documents\\GitHub\\KUGameJam\\LoseScreen\\lose_screen.cs",
+              "RelativeToolTip": "LoseScreen\\lose_screen.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T05:52:49.118Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
