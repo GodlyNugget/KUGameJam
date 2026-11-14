@@ -12,7 +12,7 @@ public partial class player : CharacterBody2D
 		velocity.Y = -2000;
 		Velocity = velocity;
 	}
-
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
@@ -35,5 +35,4 @@ public partial class player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
-
 }
