@@ -3,7 +3,7 @@ using Godot;
 
 public partial class player : CharacterBody2D
 {
-	public const float Speed = 1500.0f;
+	public const float Speed = 2000.0f;
 	public const float JumpVelocity = -400.0f;
 
     [Export]
@@ -25,31 +25,14 @@ public partial class player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-
-            if (Input.IsActionPressed("Glyde") && velocity.Y > 0)
-            {
-                //GD.Print("before: " + velocity.Y);
-
-                //velocity += GetGravity() * 0.5f * (float)delta;
-
-                //GD.Print("after: " + velocity.Y);
-                glydeFall(delta, ref velocity);
-            }
-            else
-			{
-
-                velocity += GetGravity() * (float)delta;
-
-            }
-        }
+			velocity += GetGravity() * (float)delta;
+		}
 
 		// Handle Jump.
 		if (Input.IsActionJustPressed("jump"))
 		{
 			velocity.Y += JumpVelocity;
 		}
-
-
 		
 		velocity.X = Speed;
 
@@ -59,22 +42,13 @@ public partial class player : CharacterBody2D
 		//Vector2 stoppedMoving = new Vector2(0, 0);
 		if (this.Velocity == stoppedMoving)
 		{
-            GD.Print("stopped moving");
-            _loseScreen.ToggleScreen(true);
+			_loseScreen.ToggleScreen(true);
         }
 	}
 
-    //somekind of flying/glyding method
-    public void glydeFall(double delta, ref Vector2 velocity)
-	{
+	
 
-		//cooldown
+	//somekind of flying/glyding method
 
-        GD.Print("before: " + velocity.Y);
-
-        velocity += GetGravity() * 0.2f * (float)delta;
-
-        GD.Print("after: " + velocity.Y);
-    }
 
 }
