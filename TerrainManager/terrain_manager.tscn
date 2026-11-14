@@ -3,28 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="1_0tn3e"]
 [ext_resource type="Script" uid="uid://do2wj340pbb15" path="res://TerrainManager/TerrainManager.cs" id="1_kcer5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrwn2"]
-size = Vector2(1284, 126)
-
 [node name="TerrainManager" type="Node2D" unique_id=822719518]
 script = ExtResource("1_kcer5")
 
-[node name="Floor1" type="StaticBody2D" parent="." unique_id=208152678]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1" unique_id=875020005]
-shape = SubResource("RectangleShape2D_xrwn2")
+[node name="Floor1" type="Node2D" parent="." unique_id=1476539149]
+scale = Vector2(1.2, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor1" unique_id=954276129]
 scale = Vector2(10.000001, 1)
 texture = ExtResource("1_0tn3e")
 
-[node name="Floor2" type="StaticBody2D" parent="." unique_id=1768332378]
-position = Vector2(1291, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2" unique_id=132713607]
-shape = SubResource("RectangleShape2D_xrwn2")
+[node name="Floor2" type="Node2D" parent="." unique_id=1112254210]
+position = Vector2(1542, 0)
+scale = Vector2(1.2, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor2" unique_id=1895442954]
-rotation = -3.1415927
+rotation = 3.1415925
 scale = Vector2(10.000001, 1)
 texture = ExtResource("1_0tn3e")

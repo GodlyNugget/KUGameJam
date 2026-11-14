@@ -9,7 +9,7 @@ public partial class player : CharacterBody2D
     public override void _Ready()
 	{
 		Vector2 velocity = new Vector2();
-		velocity.Y = -2000;
+		velocity.Y = 0;
 		Velocity = velocity;
 	}
 	
@@ -20,7 +20,7 @@ public partial class player : CharacterBody2D
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
-			velocity += GetGravity() * (float)delta;
+			//velocity += GetGravity() * (float)delta;
 		}
 
 		// Handle Jump.
@@ -28,11 +28,9 @@ public partial class player : CharacterBody2D
 		{
 			velocity.Y += JumpVelocity;
 		}
-		
-		velocity.X = Speed;
-		GD.Print("Hello");
-
 		Velocity = velocity;
+
+		Globals.SetPlayerSpeedX((float)200);
 		MoveAndSlide();
 	}
 }
