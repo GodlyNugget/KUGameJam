@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bb8s2mrassv0m"]
 
+[ext_resource type="Script" uid="uid://dece4s8v1paui" path="res://Game/Game.cs" id="1_7raqb"]
 [ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="1_bk3v5"]
 [ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_1r4le"]
 
@@ -9,6 +10,7 @@
 size = Vector2(84, 128)
 
 [node name="Game" type="Node2D" unique_id=1913227579]
+script = ExtResource("1_7raqb")
 
 [node name="World" type="Node2D" parent="." unique_id=845333330]
 
@@ -134,7 +136,7 @@ scale = Vector2(0.68, 1)
 texture = ExtResource("2_1r4le")
 
 [node name="Obstacle10" type="StaticBody2D" parent="World" unique_id=1878094590]
-position = Vector2(16983, 422)
+position = Vector2(16994, 530)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Obstacle10" unique_id=2002668292]
 shape = SubResource("RectangleShape2D_xrwn2")

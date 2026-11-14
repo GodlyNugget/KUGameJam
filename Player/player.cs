@@ -3,7 +3,7 @@ using System;
 
 public partial class player : CharacterBody2D
 {
-	public const float Speed = 3000.0f;
+	public const float Speed = 2000.0f;
 	public const float JumpVelocity = -400.0f;
 
     public override void _Ready()
@@ -24,14 +24,12 @@ public partial class player : CharacterBody2D
 		}
 
 		// Handle Jump.
-		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		if (Input.IsActionJustPressed("jump"))
 		{
-			//velocity.Y = JumpVelocity;
+			velocity.Y += JumpVelocity;
 		}
 		
 		velocity.X = Speed;
-
-		GD.Print(velocity.Y);
 
 		Velocity = velocity;
 		MoveAndSlide();
