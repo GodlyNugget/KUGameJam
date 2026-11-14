@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://0oco4vgp0g1x"]
+
+[ext_resource type="Script" uid="uid://dfuw6dpff4umk" path="res://LoseScreen/lose_screen.cs" id="1_3jpwb"]
+
+[node name="LoseScreen" type="Control" unique_id=411117331 node_paths=PackedStringArray("_restartButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3jpwb")
+_restartButton = NodePath("MarginContainer/VBoxContainer/Control/MarginContainer/Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=775616164]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.096
+anchor_right = 0.90900004
+anchor_bottom = 0.81500006
+offset_left = 98.0
+offset_top = 27.792
+offset_right = -5.168091
+offset_bottom = 27.879944
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=595177980]
+layout_mode = 2
+color = Color(0.24705882, 0.22745098, 0.7882353, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=658180411]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1901347562]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "You Lose :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1447374415]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control" unique_id=783699215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_right = 0.32500002
+offset_left = 308.848
+offset_top = 30.0
+offset_right = 308.824
+offset_bottom = 93.0
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=79714241]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Retry?"

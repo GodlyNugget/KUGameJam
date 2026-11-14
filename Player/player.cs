@@ -1,10 +1,15 @@
-using Godot;
 using System;
+using Godot;
 
 public partial class player : CharacterBody2D
 {
 	public const float Speed = 2000.0f;
 	public const float JumpVelocity = -400.0f;
+
+    [Export]
+    private lose_screen _loseScreen;
+
+    Vector2 stoppedMoving = new Vector2(0, 0);
 
     public override void _Ready()
 	{
@@ -33,8 +38,15 @@ public partial class player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+
+		//Vector2 stoppedMoving = new Vector2(0, 0);
+		if (this.Velocity == stoppedMoving)
+		{
+			_loseScreen.ToggleScreen(true);
+        }
 	}
 
+	
 
 	//somekind of flying/glyding method
 
