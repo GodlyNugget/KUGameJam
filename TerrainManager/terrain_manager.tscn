@@ -1,32 +1,6 @@
 [gd_scene format=3 uid="uid://bxo58rlxvbt13"]
 
-[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="1_0tn3e"]
 [ext_resource type="Script" uid="uid://do2wj340pbb15" path="res://TerrainManager/TerrainManager.cs" id="1_kcer5"]
 
 [node name="TerrainManager" type="Node2D" unique_id=822719518]
 script = ExtResource("1_kcer5")
-
-[node name="Floor1" type="Node2D" parent="." unique_id=1476539149]
-scale = Vector2(1.2, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Floor1" unique_id=954276129]
-scale = Vector2(10.000001, 1)
-texture = ExtResource("1_0tn3e")
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Floor1" unique_id=120653935]
-rect = Rect2(-640, -64, 1280, 128)
-
-[node name="Floor2" type="Node2D" parent="." unique_id=1112254210]
-position = Vector2(1536, 0)
-scale = Vector2(1.2, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Floor2" unique_id=1895442954]
-rotation = 3.1415925
-scale = Vector2(10.000001, 1)
-texture = ExtResource("1_0tn3e")
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Floor2" unique_id=1965954890]
-rect = Rect2(-640, -64, 1280, 128)
-
-[connection signal="screen_exited" from="Floor1/VisibleOnScreenEnabler2D" to="." method="TerrainLeftScreen" binds= [true]]
-[connection signal="screen_exited" from="Floor2/VisibleOnScreenEnabler2D" to="." method="TerrainLeftScreen" binds= [false]]

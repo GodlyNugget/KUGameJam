@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bf3svkylf3ew"]
+
+[node name="Terrain" type="Node2D" unique_id=2130390171]
+
+[node name="Objects" type="Node2D" parent="." unique_id=2111354121]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
