@@ -3,8 +3,15 @@ using System;
 
 public partial class player : CharacterBody2D
 {
-	public const float Speed = 300.0f;
+	public const float Speed = 3000.0f;
 	public const float JumpVelocity = -400.0f;
+
+    public override void _Ready()
+	{
+		Vector2 velocity = new Vector2();
+		velocity.Y = -2000;
+		Velocity = velocity;
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -19,20 +26,12 @@ public partial class player : CharacterBody2D
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
-			velocity.Y = JumpVelocity;
+			//velocity.Y = JumpVelocity;
 		}
+		
+		velocity.X = Speed;
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("move_left", "move_right", "move_up", "move_down");
-		if (direction != Vector2.Zero)
-		{
-			velocity.X = direction.X * Speed;
-		}
-		else
-		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
+		GD.Print(velocity.Y);
 
 		Velocity = velocity;
 		MoveAndSlide();
