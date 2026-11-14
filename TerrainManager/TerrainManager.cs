@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public partial class TerrainManager : Node2D
-{
+{	
 	Terrain CurrentTerrain;
 	Terrain NextTerrain;
 
@@ -10,7 +10,10 @@ public partial class TerrainManager : Node2D
 	public override void _Ready()
 	{
 		CurrentTerrain = PickNextTerrain();
+		AddChild(CurrentTerrain);
 		NextTerrain = PickNextTerrain();
+		NextTerrain.Position = new Vector2(1254, 0);
+		AddChild(NextTerrain);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,14 +26,15 @@ public partial class TerrainManager : Node2D
 		NextTerrain.Position -= new Vector2(PlayerSpeed * (float)delta, 0);
 	}
 
-	private void TerrainLeftScreen()
+	public void TerrainLeftScreen()
 	{
 		CurrentTerrain = NextTerrain;
 		NextTerrain = PickNextTerrain();
+		AddChild(NextTerrain);
 	}
 
 	private Terrain PickNextTerrain()
 	{
-		
+		return (Terrain)ResourceLoader.Load<PackedScene>("res://TerrainManager/Terrain/terrain.tscn").Instantiate();
 	}
 }
