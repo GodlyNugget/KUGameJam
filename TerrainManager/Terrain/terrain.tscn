@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bf3svkylf3ew"]
+
+[ext_resource type="Script" uid="uid://b0t7ly1rdfcu0" path="res://TerrainManager/Terrain/Terrain.cs" id="1_3iwhe"]
+[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_mqoaj"]
+
+[node name="Terrain" type="Node2D" unique_id=2130390171]
+script = ExtResource("1_3iwhe")
+
+[node name="Objects" type="Node2D" parent="." unique_id=2111354121]
+
+[node name="Sprite2D" type="Sprite2D" parent="Objects" unique_id=2047544873]
+scale = Vector2(12.000003, 1)
+texture = ExtResource("2_mqoaj")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
+rect = Rect2(-768, -64, 1536, 128)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="EmitExitedScreen"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxo58rlxvbt13"]
+
+[ext_resource type="Script" uid="uid://do2wj340pbb15" path="res://TerrainManager/TerrainManager.cs" id="1_kcer5"]
+
+[node name="TerrainManager" type="Node2D" unique_id=822719518]
+script = ExtResource("1_kcer5")
