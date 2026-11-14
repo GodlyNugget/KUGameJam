@@ -3,23 +3,10 @@
 [ext_resource type="Script" uid="uid://b0t7ly1rdfcu0" path="res://TerrainManager/Terrain/Terrain.cs" id="1_3iwhe"]
 [ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_mqoaj"]
 
-[sub_resource type="Gradient" id="Gradient_4lthi"]
-offsets = PackedFloat32Array(0, 0.68028843, 0.68990386, 1)
-colors = PackedColorArray(0.05690778, 0.47377402, 0.44506764, 1, 0.271001, 0.69286674, 0.9491897, 1, 0.7945443, 0.8478975, 0.7536133, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_mqoaj"]
-gradient = SubResource("Gradient_4lthi")
-
 [node name="Terrain" type="Node2D" unique_id=2130390171]
 script = ExtResource("1_3iwhe")
 
 [node name="Objects" type="Node2D" parent="." unique_id=2111354121]
-
-[node name="water" type="Sprite2D" parent="Objects" unique_id=30215324]
-position = Vector2(0, 207.248)
-rotation = -1.5707968
-scale = Vector2(8.468, 2000)
-texture = SubResource("GradientTexture1D_mqoaj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Objects" unique_id=2047544873]
 scale = Vector2(12.000003, 1)

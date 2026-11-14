@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dlfphc25seytg"]
+
+[ext_resource type="Script" uid="uid://dece4s8v1paui" path="res://Game/Game.cs" id="1_ufdpl"]
+[ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="2_g75fx"]
+[ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="2_gc013"]
+[ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="3_g75fx"]
+
+[sub_resource type="Gradient" id="Gradient_4lthi"]
+offsets = PackedFloat32Array(0, 0.68028843, 0.68990386, 1)
+colors = PackedColorArray(0.05690778, 0.47377402, 0.44506764, 1, 0.271001, 0.69286674, 0.9491897, 1, 0.7945443, 0.8478975, 0.7536133, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ufdpl"]
+gradient = SubResource("Gradient_4lthi")
+
+[node name="Game" type="Node2D" unique_id=1913227579]
+script = ExtResource("1_ufdpl")
+
+[node name="water" type="Sprite2D" parent="." unique_id=1197190716]
+position = Vector2(0, 207.248)
+rotation = -1.5707968
+scale = Vector2(8.468, 2000)
+texture = SubResource("GradientTexture1D_ufdpl")
+
+[node name="Boat" type="Sprite2D" parent="." unique_id=1950304056]
+position = Vector2(-1375.9999, -139.99997)
+scale = Vector2(3.4198294, 3.4198294)
+texture = ExtResource("2_g75fx")
+
+[node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("3_g75fx")]
+position = Vector2(0, 264)
+
+[node name="Player" parent="." unique_id=1242398821 instance=ExtResource("2_gc013")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1935699917]
