@@ -30,6 +30,7 @@ public partial class player : CharacterBody2D
 		}
 		
 		velocity.X = Speed;
+		GD.Print("Hello");
 
 		Velocity = velocity;
 		MoveAndSlide();
