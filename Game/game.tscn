@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="1_bk3v5"]
 [ext_resource type="Script" uid="uid://c7ujdvwp7xjyl" path="res://Enemies/Boat.cs" id="2_33n3b"]
 [ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="3_7raqb"]
+[ext_resource type="Script" uid="uid://c8thax7e77xef" path="res://Game/DistanceTraveled.cs" id="3_72g0p"]
 [ext_resource type="Texture2D" uid="uid://cd2nd5gb564b8" path="res://sprites/loose.png" id="3_72g0p"]
 [ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="3_rxmp4"]
 [ext_resource type="Script" uid="uid://bs67m8ny1ucuh" path="res://WinScreen.cs" id="4_4lqr4"]
@@ -80,6 +81,37 @@ offset_bottom = 239.0
 layout_mode = 2
 text = "replay?"
 
+[node name="DistanceTraveled" type="Control" parent="CanvasLayer" unique_id=465564813 node_paths=PackedStringArray("_distanceTraveled")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 594.0
+offset_right = 205.0
+offset_bottom = 636.0
+script = ExtResource("3_72g0p")
+_distanceTraveled = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DistanceTraveled" unique_id=1321585086]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.75000006
+anchor_bottom = 1.307
+offset_left = 12.0
+offset_top = -5.0
+offset_right = -1.5258789e-05
+offset_bottom = -4.991993
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=2130826764]
+layout_mode = 2
+color = Color(0.7607843, 0.76862746, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=383963400]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "0 Feet "
+horizontal_alignment = 1
+
+[node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("3_7raqb")]
 [node name="Win_Screen" type="Control" parent="CanvasLayer" unique_id=1050786024 node_paths=PackedStringArray("_restartButton")]
 layout_mode = 3
 anchor_left = 0.15900001
@@ -138,9 +170,10 @@ position = Vector2(0, 264)
 winTerrainAmmount = 10
 winScreen = NodePath("../CanvasLayer/Win_Screen")
 
-[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
+[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
 position = Vector2(577, -27)
 LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
+FeetTraveled = NodePath("../CanvasLayer/DistanceTraveled")
 StuckUnderWaterTimer = NodePath("UnderWaterTimer")
 
 [node name="UnderWaterTimer" type="Timer" parent="Player" unique_id=351804931]
@@ -161,19 +194,16 @@ enemySpawns = Array[PackedScene]([ExtResource("8_qlwvw"), ExtResource("9_rpdke")
 [node name="treat spawner" parent="." unique_id=939676070 instance=ExtResource("5_glinl")]
 position = Vector2(1512, -4)
 enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b")])
-timerIntervul = 1.0
 maxDepth = 1000
 
 [node name="treat spawner3" parent="." unique_id=885624705 instance=ExtResource("5_glinl")]
 position = Vector2(1365, -14)
 enemySpawns = Array[PackedScene]([ExtResource("10_33n3b")])
-timerIntervul = 1.0
 maxDepth = 500
 
 [node name="treat spawner2" parent="." unique_id=1680514423 instance=ExtResource("5_glinl")]
 position = Vector2(1439, 765)
 enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b"), ExtResource("12_qyr8x")])
-timerIntervul = 1.0
 maxDepth = 1000
 
 [node name="treat spawner4" parent="." unique_id=1895168367 instance=ExtResource("5_glinl")]

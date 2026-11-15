@@ -14,7 +14,10 @@ public partial class player : CharacterBody2D
     [Export]
     private Lose_Screen LoseScreen;
 
-	[Export]
+    [Export]
+    public DistanceTraveled FeetTraveled;
+
+    [Export]
 	public Timer StuckUnderWaterTimer;
 
 	public float TimeStuckUnderWater = 0.45f;
@@ -118,6 +121,9 @@ public partial class player : CharacterBody2D
         SimulatedPlayerPosition += (Globals.GetPlayerSpeedX() * (float)delta) / 1000;
         GD.Print("Player Speed: " + Globals.GetPlayerSpeedX());
         GD.Print("Player 'position': " + SimulatedPlayerPosition);
+
+        GD.Print("FeetTraveled = " + FeetTraveled);
+        FeetTraveled.Distance = (int)SimulatedPlayerPosition;
 
 
         //GD.Print("CanGlide: " + CanGlide);
