@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://jlp074qs43it"]
+
+[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="1_grk6s"]
+[ext_resource type="Texture2D" uid="uid://dahyti0x7g7as" path="res://sprites/jelly.png" id="2_q5lu2"]
+[ext_resource type="Texture2D" uid="uid://2wi3i6okv3ll" path="res://sprites/crabjawn.png" id="3_chr1k"]
+[ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="4_0mih8"]
+
+[node name="Chunk2" type="Node2D" unique_id=1261258572]
+
+[node name="Boundaries" type="Node" parent="." unique_id=58766971]
+
+[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=915684712]
+position = Vector2(-975, -975)
+
+[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=840723400]
+position = Vector2(1890, -975)
+
+[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=1022369222]
+position = Vector2(-975, 975)
+
+[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=751326506]
+position = Vector2(1890, 975)
+
+[node name="Display" type="Node2D" parent="." unique_id=2125314673]
+
+[node name="BigTreat" type="Sprite2D" parent="." unique_id=161011698]
+position = Vector2(-523, -664)
+texture = ExtResource("1_grk6s")
+
+[node name="Jelly" type="Sprite2D" parent="." unique_id=2002350032]
+position = Vector2(-45, 581)
+texture = ExtResource("2_q5lu2")
+
+[node name="Crabjawn" type="Sprite2D" parent="." unique_id=443806179]
+position = Vector2(1407, 801)
+texture = ExtResource("3_chr1k")
+
+[node name="Slow" type="Sprite2D" parent="." unique_id=301399281]
+position = Vector2(869, 241)
+texture = ExtResource("4_0mih8")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://nd8ywp17vk8b"]
+
+[ext_resource type="Script" uid="uid://bl8v1g4qc77w8" path="res://Interactables/BigTreat/BigTreat.cs" id="1_60yk6"]
+[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="1_v7s41"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrwn2"]
+radius = 48.0
+height = 142.0
+
+[node name="BigTreat" type="Area2D" unique_id=2023332671]
+script = ExtResource("1_60yk6")
+
+[node name="BigTreat" type="Sprite2D" parent="." unique_id=1567815471]
+texture = ExtResource("1_v7s41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1102581492]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xrwn2")
+
+[connection signal="body_entered" from="." to="." method="action"]
