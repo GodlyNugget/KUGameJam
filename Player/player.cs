@@ -71,6 +71,7 @@ public partial class player : CharacterBody2D
         //GD.Print(WaterLevel - WaterLevelOffset);
 
         //GD.Print("player y position:" + this.GlobalPosition.Y);
+		//GD.Print("player y position:" + this.GlobalPosition.Y);
 
 		if (this.GlobalPosition.Y <= WaterLevel)
 		{
