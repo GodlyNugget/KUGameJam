@@ -21,7 +21,7 @@ public partial class player : CharacterBody2D
 		if (!IsOnFloor())
 		{
 			//eeheh
-			//velocity += GetGravity() * (float)delta;
+			velocity += GetGravity() * (float)delta;
 		}
 
 		// Handle Jump.
@@ -31,7 +31,6 @@ public partial class player : CharacterBody2D
 		}
         Velocity = velocity;
 
-        Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 	}
 }

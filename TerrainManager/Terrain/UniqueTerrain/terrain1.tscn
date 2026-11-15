@@ -2,23 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b0t7ly1rdfcu0" path="res://TerrainManager/Terrain/Terrain.cs" id="1_trolg"]
 
-[sub_resource type="Gradient" id="Gradient_4lthi"]
-offsets = PackedFloat32Array(0, 0.68028843, 0.68990386, 1)
-colors = PackedColorArray(0.05690778, 0.47377402, 0.44506764, 1, 0.271001, 0.69286674, 0.9491897, 1, 0.7945443, 0.8478975, 0.7536133, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_fdr2s"]
-gradient = SubResource("Gradient_4lthi")
-
 [node name="Terrain" type="Node2D" unique_id=2130390171]
 script = ExtResource("1_trolg")
 
 [node name="Objects" type="Node2D" parent="." unique_id=2111354121]
-
-[node name="Sprite2D" type="Sprite2D" parent="Objects" unique_id=2047544873]
-position = Vector2(3.0380673, 257.13513)
-rotation = -1.5707964
-scale = Vector2(11.409262, 1529.2917)
-texture = SubResource("GradientTexture1D_fdr2s")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
 rect = Rect2(-768, -64, 1536, 128)
