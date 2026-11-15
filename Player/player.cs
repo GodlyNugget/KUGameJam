@@ -1,12 +1,9 @@
 using System;
 using Godot;
 
-
-//THIS IS NEW VERISON
-
 public partial class player : CharacterBody2D
 {
-	public float Speed = 2000.0f;
+	//public float Speed = 1500.0f;
 	public const float JumpVelocity = -400.0f;
 
     public static float SpeedThreshhold = 1000.0f;
@@ -118,8 +115,8 @@ public partial class player : CharacterBody2D
         //GD.Print("player y position:" + this.GlobalPosition.Y);
         //GD.Print("player y position:" + this.GlobalPosition.Y);
 
-        SimulatedPlayerPosition += (Speed * (float)delta) / 1000;
-        GD.Print("Player Speed: " + Speed);
+        SimulatedPlayerPosition += (Globals.GetPlayerSpeedX() * (float)delta) / 1000;
+        GD.Print("Player Speed: " + Globals.GetPlayerSpeedX());
         GD.Print("Player 'position': " + SimulatedPlayerPosition);
 
 
