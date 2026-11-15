@@ -1,16 +1,12 @@
 [gd_scene format=3 uid="uid://0oco4vgp0g1x"]
 
-[ext_resource type="Script" uid="uid://dfuw6dpff4umk" path="res://LoseScreen/lose_screen.cs" id="1_3jpwb"]
-
-[node name="LoseScreen" type="Control" unique_id=411117331 node_paths=PackedStringArray("_restartButton")]
+[node name="Lose_Screen" type="Control" unique_id=411117331]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3jpwb")
-_restartButton = NodePath("MarginContainer/VBoxContainer/Control/MarginContainer/Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=775616164]
 layout_mode = 1
