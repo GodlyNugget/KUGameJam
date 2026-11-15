@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://cylt3eo1yp882"]
 
 [ext_resource type="Texture2D" uid="uid://bf4sb453xn7l4" path="res://sprites/muncher.png" id="1_e4470"]
+[ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_frkk0"]
 
-[node name="Lurker_enemy" type="Node2D" unique_id=1162571999]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(168, 426)
+
+[node name="Lurker_enemy" type="Area2D" unique_id=1286623691 node_paths=PackedStringArray("canvas")]
+script = ExtResource("1_frkk0")
+canvas = NodePath("Sprite2D")
+
+[node name="Area2D" type="CollisionShape2D" parent="." unique_id=294353242]
+position = Vector2(-4, 2.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_3owqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701776943]
-scale = Vector2(0.5, 0.5)
+modulate = Color(1, 1, 1, 0.19215687)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_e4470")

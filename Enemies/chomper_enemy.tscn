@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://ri0g15skhydl"]
 
 [ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="1_tfksj"]
+[ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_uesg3"]
 
-[node name="Chomper_enemy" type="Node2D" unique_id=1479383847]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(243, 121)
+
+[node name="Chomper_enemy" type="Area2D" unique_id=1623491284 node_paths=PackedStringArray("canvas")]
+script = ExtResource("1_uesg3")
+canvas = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=294392118]
 texture = ExtResource("1_tfksj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717279748]
+position = Vector2(-50.5, 15)
+shape = SubResource("RectangleShape2D_3owqy")
