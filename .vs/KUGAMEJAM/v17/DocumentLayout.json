@@ -1,34 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\",
+  "WorkspaceRootPath": "C:\\Git(520)\\KUGameJam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemies\\Enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:enemies\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Game\\Barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\game\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:game\\barrier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Enemies\\EnemySpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\game\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:game\\globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Game\\Globals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\enemies\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:enemies\\enemyspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TreatBoosts\\Treat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TreatBoosts\\Treat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Player\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\treatboosts\\treat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:treatboosts\\treat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TerrainManager\\Terrain\\Terrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TerrainManager\\Terrain\\Terrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|c:\\git(520)\\kugamejam\\terrainmanager\\terrain\\terrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA120D6B-D483-4A4B-AAC5-E5CFF07CD75A}|KUGameJam.csproj|solutionrelative:terrainmanager\\terrain\\terrain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,22 +48,21 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Barrier.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Barrier.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\Game\\Barrier.cs",
               "RelativeDocumentMoniker": "Game\\Barrier.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Barrier.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\Game\\Barrier.cs",
               "RelativeToolTip": "Game\\Barrier.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-15T04:17:01.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-15T04:17:01.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Globals.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Globals.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\Game\\Globals.cs",
               "RelativeDocumentMoniker": "Game\\Globals.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Game\\Globals.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\Game\\Globals.cs",
               "RelativeToolTip": "Game\\Globals.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -71,11 +70,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnemySpawner.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\EnemySpawner.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\Enemies\\EnemySpawner.cs",
               "RelativeDocumentMoniker": "Enemies\\EnemySpawner.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\EnemySpawner.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\Enemies\\EnemySpawner.cs",
               "RelativeToolTip": "Enemies\\EnemySpawner.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -83,11 +82,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "player.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Player\\player.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\Player\\player.cs",
               "RelativeDocumentMoniker": "Player\\player.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Player\\player.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\Player\\player.cs",
               "RelativeToolTip": "Player\\player.cs",
               "ViewState": "AgIAAKoAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,22 +96,22 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\Enemy.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\Enemies\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemies\\Enemy.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\Enemies\\Enemy.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\Enemies\\Enemy.cs",
               "RelativeToolTip": "Enemies\\Enemy.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCUAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-15T00:30:29.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Treat.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TreatBoosts\\Treat.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\TreatBoosts\\Treat.cs",
               "RelativeDocumentMoniker": "TreatBoosts\\Treat.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TreatBoosts\\Treat.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\TreatBoosts\\Treat.cs",
               "RelativeToolTip": "TreatBoosts\\Treat.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -122,9 +121,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Terrain.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TerrainManager\\Terrain\\Terrain.cs",
+              "DocumentMoniker": "C:\\Git(520)\\KUGameJam\\TerrainManager\\Terrain\\Terrain.cs",
               "RelativeDocumentMoniker": "TerrainManager\\Terrain\\Terrain.cs",
-              "ToolTip": "C:\\Users\\admin\\Documents\\GitHub\\KUGameJam\\TerrainManager\\Terrain\\Terrain.cs",
+              "ToolTip": "C:\\Git(520)\\KUGameJam\\TerrainManager\\Terrain\\Terrain.cs",
               "RelativeToolTip": "TerrainManager\\Terrain\\Terrain.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -3,16 +3,47 @@
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_3y8ua"]
 [ext_resource type="Texture2D" uid="uid://dahyti0x7g7as" path="res://sprites/jelly.png" id="1_yyd5p"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3owqy"]
-radius = 130.75168
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y8ua"]
+atlas = ExtResource("1_yyd5p")
+region = Rect2(0, 0, 156, 195)
 
-[node name="Weird_enemy" type="Area2D" unique_id=225205814 node_paths=PackedStringArray("canvas")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_63a4u"]
+atlas = ExtResource("1_yyd5p")
+region = Rect2(156, 0, 156, 195)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgrjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y8ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63a4u")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3owqy"]
+radius = 98.045906
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3y8ua"]
+
+[node name="Weird_enemy" type="Area2D" unique_id=225205814 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_3y8ua")
 MoveDirection = Vector2(-0.8, -0.2)
-canvas = NodePath("Sprite2D")
+spriteOld = NodePath("AnimatedSprite2D")
+spriteNew = NodePath("AnimatedSprite2D")
+canvas = NodePath("AnimatedSprite2D")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=347730790]
-texture = ExtResource("1_yyd5p")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=397655595]
+sprite_frames = SubResource("SpriteFrames_kgrjj")
+autoplay = "default"
+frame_progress = 0.650323
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858027743]
 shape = SubResource("CircleShape2D_3owqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75581273]
+sprite_frames = SubResource("SpriteFrames_3y8ua")

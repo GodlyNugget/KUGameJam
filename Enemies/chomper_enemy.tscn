@@ -3,15 +3,84 @@
 [ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="1_tfksj"]
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_uesg3"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uesg3"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(0, 0, 474, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f740h"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(474, 0, 474, 395)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgrjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uesg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f740h")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c17ki"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(948, 0, 474, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aviq1"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(1422, 0, 474, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nmfw"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(0, 0, 474, 395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu2xo"]
+atlas = ExtResource("1_tfksj")
+region = Rect2(474, 0, 474, 395)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyi48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c17ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aviq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nmfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu2xo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(243, 121)
 
-[node name="Chomper_enemy" type="Area2D" unique_id=1623491284 node_paths=PackedStringArray("canvas")]
+[node name="Chomper_enemy" type="Area2D" unique_id=1623491284 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_uesg3")
-canvas = NodePath("Sprite2D")
+spriteOld = NodePath("Sprite2D")
+spriteNew = NodePath("AnimatedSprite2D")
+SpeedDecrement = 0.9
+canvas = NodePath(".")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=294392118]
-texture = ExtResource("1_tfksj")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=685465892]
+sprite_frames = SubResource("SpriteFrames_kgrjj")
+autoplay = "default"
+frame_progress = 0.6354405
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776362440]
+visible = false
+sprite_frames = SubResource("SpriteFrames_wyi48")
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717279748]
 position = Vector2(-50.5, 15)

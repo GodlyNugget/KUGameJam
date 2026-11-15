@@ -37,6 +37,7 @@ size = Vector2(32, 32)
 
 [node name="MediumTreat" type="Area2D" unique_id=2066846949]
 script = ExtResource("1_3ayx0")
+speedBostPercent = 1.11
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=705723566]
 scale = Vector2(0.39999998, 0.39999998)
