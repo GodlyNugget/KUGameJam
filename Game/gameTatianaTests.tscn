@@ -21,7 +21,9 @@ rotation = -1.5707968
 scale = Vector2(8.468, 2000)
 texture = SubResource("GradientTexture1D_ufdpl")
 
-[node name="Boat" type="Sprite2D" parent="." unique_id=1950304056]
+[node name="Node2D" type="Node2D" parent="." unique_id=1876907906]
+
+[node name="BoatSprite" type="Sprite2D" parent="Node2D" unique_id=1950304056]
 position = Vector2(-1375.9999, -139.99997)
 scale = Vector2(3.4198294, 3.4198294)
 texture = ExtResource("2_g75fx")

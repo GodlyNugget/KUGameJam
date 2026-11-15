@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmkrvm7v7tqks"]
+
+[ext_resource type="Texture2D" uid="uid://2wi3i6okv3ll" path="res://sprites/crabjawn.png" id="1_57dp0"]
+[ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_bo4wm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(70, 379)
+
+[node name="Crab_jawn" type="Area2D" unique_id=1247859814 node_paths=PackedStringArray("canvas")]
+script = ExtResource("1_bo4wm")
+MoveSpeed = 8.0
+SpeedMdifier = 15.0
+canvas = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302468992]
+position = Vector2(42.999966, -68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_57dp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766533875]
+position = Vector2(1, -248.5)
+shape = SubResource("RectangleShape2D_3owqy")
