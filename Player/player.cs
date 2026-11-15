@@ -43,13 +43,14 @@ public partial class player : CharacterBody2D
 		velocity.Y = 0;
 		Velocity = velocity;
 
+        Globals.SetPlayerSpeedX((float)2000);
 
         StuckUnderWaterTimer = GetNode<Timer>("StuckUnderWaterTimer");
         StuckUnderWaterTimer.WaitTime = TimeStuckUnderWater;
 
         StuckUnderWaterTimer.Timeout += () =>
         {
-            GD.Print("TIMER FIRED");
+            //GD.Print("TIMER FIRED");
             CanSwim = true;
         };
 
@@ -59,7 +60,7 @@ public partial class player : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		Globals.SetPlayerSpeedX((float)2000);
+		//Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 
         // Add the gravity.
@@ -69,7 +70,7 @@ public partial class player : CharacterBody2D
         //GD.Print(AboveWater);
         //GD.Print(WaterLevel - WaterLevelOffset);
 
-        GD.Print("player y position:" + this.GlobalPosition.Y);
+        //GD.Print("player y position:" + this.GlobalPosition.Y);
 
 		if (this.GlobalPosition.Y <= WaterLevel)
 		{
@@ -80,7 +81,7 @@ public partial class player : CharacterBody2D
                 //splash animation, looking at you here Tatiana
 
                 velocity.Y += JumpVelocity / 2;
-                GD.Print("Jump Splash");
+                //GD.Print("Jump Splash");
 
             }
 
@@ -118,9 +119,9 @@ public partial class player : CharacterBody2D
             }
 
             //GD.Print(StuckUnderWaterTimer);
-            GD.Print("CanSwim: " + CanSwim);
-			GD.Print("StuckUnderWaterTimer:" + StuckUnderWaterTimer.IsStopped());
-			GD.Print("Time Left:" + StuckUnderWaterTimer.TimeLeft);
+            //GD.Print("CanSwim: " + CanSwim);
+			//GD.Print("StuckUnderWaterTimer:" + StuckUnderWaterTimer.IsStopped());
+			//GD.Print("Time Left:" + StuckUnderWaterTimer.TimeLeft);
 
             if (CanSwim)
 			{
@@ -157,7 +158,7 @@ public partial class player : CharacterBody2D
         velocity.Y = Mathf.Min(velocity.Y, 100.0f); 
 
         //velocity += GetGravity() * slowDescentAmount * (float)delta;
-		GD.Print("ran GlideMovement");
+		//GD.Print("ran GlideMovement");
 	}
 
 	private void UnderWaterMovement(double delta, ref Vector2 velocity)
@@ -173,7 +174,7 @@ public partial class player : CharacterBody2D
 		{
 			velocity.Y -= UnderWaterMovementSpeed;
         }
-        GD.Print("ran UnderWaterMovement");
+        //GD.Print("ran UnderWaterMovement");
     }
 
 }
