@@ -17,8 +17,8 @@ public partial class Boat : Area2D
 	{
 		Vector2 newPos = Position;
 
-		Globals.SetBoatSpeedX( Globals.GetBoatSpeedX() + 1.5f);
-		float distannce = Mathf.Lerp(-500, 500, Globals.GetBoatSpeedX()*.5f / Globals.GetPlayerSpeedX());
+		Globals.SetBoatSpeedX( Globals.GetBoatSpeedX() + .8f);
+		float distannce = Mathf.Lerp(-1000, 500, Globals.GetBoatSpeedX()*.5f / Globals.GetPlayerSpeedX());
 
 		newPos.X = distannce;
 		Position = newPos;
