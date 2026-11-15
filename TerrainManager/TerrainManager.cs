@@ -14,8 +14,7 @@ public partial class TerrainManager : Node2D
 		CurrentTerrain = PickNextTerrain();
 		AddChild(CurrentTerrain);
 		NextTerrain = PickNextTerrain();
-		//The 1254 is hardcoded for the width of the current terrains. Will need to change for variating terrain sizes.
-		NextTerrain.Position = new Vector2(1254, 0);
+		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
 	}
 
@@ -35,7 +34,7 @@ public partial class TerrainManager : Node2D
 		//Create new Terrain
 		CurrentTerrain = NextTerrain;
 		NextTerrain = PickNextTerrain();
-		NextTerrain.Position = new Vector2(1254, 0);
+		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
 	}
 

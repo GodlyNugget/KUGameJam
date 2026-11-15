@@ -15,3 +15,4 @@ position = Vector2(0, 264)
 visible = false
 
 [node name="Player" parent="." unique_id=1242398821 instance=ExtResource("1_bk3v5")]
+position = Vector2(625, 0)

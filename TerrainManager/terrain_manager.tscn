@@ -15,6 +15,7 @@ gradient = SubResource("Gradient_0tn3e")
 script = ExtResource("1_kcer5")
 
 [node name="Display" type="Node2D" parent="." unique_id=571690490]
+position = Vector2(626, 0)
 
 [node name="WaterGradient" type="Sprite2D" parent="Display" unique_id=1453124597]
 position = Vector2(-4.7683716e-07, 1.6940659e-21)
@@ -27,6 +28,7 @@ offset_left = -626.0
 offset_top = -1350.0
 offset_right = 626.0
 offset_bottom = -974.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Sand" type="ColorRect" parent="Display" unique_id=1342287545]
 offset_left = -626.0
@@ -34,8 +36,10 @@ offset_top = 975.0
 offset_right = 626.0
 offset_bottom = 1351.0
 color = Color(0.8007289, 0.8007291, 7.70092e-07, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Restrictions" type="Node2D" parent="." unique_id=1809946953]
+position = Vector2(625, 0)
 
 [node name="Floor" type="StaticBody2D" parent="Restrictions" unique_id=329474272]
 position = Vector2(0, 975)
