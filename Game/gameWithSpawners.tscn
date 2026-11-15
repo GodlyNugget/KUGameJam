@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_n42lo"]
 [ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_gjr0r"]
 [ext_resource type="Script" uid="uid://cxtan5lbj87d5" path="res://Game/Barrier.cs" id="13_uo288"]
+[ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="14_rgrvi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(95, 2498)
@@ -73,3 +74,11 @@ script = ExtResource("13_uo288")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=817436700]
 position = Vector2(37.5, 398)
 shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=763399922]
+position = Vector2(-39, -193)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=680427615]
+position = Vector2(-260, 251)
+scale = Vector2(2.3547714, 2.3547714)
+texture = ExtResource("14_rgrvi")
