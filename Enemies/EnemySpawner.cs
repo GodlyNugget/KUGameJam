@@ -10,7 +10,9 @@ public partial class EnemySpawner : Node2D
 	[Export]
     Timer timer;
 
-	[Export]
+    //since timerIntervul is not given a value, its givng errors saying time cant be < 0
+    //but it is set in the inspector so it is not affecting gameplay
+    [Export]
     float timerIntervul;
 
 	[Export]

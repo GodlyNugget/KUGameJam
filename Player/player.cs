@@ -52,6 +52,8 @@ public partial class player : CharacterBody2D
 
     public bool AboveWater = true;
 
+    public float SimulatedPlayerPosition;
+
     //public float WaterLevelOffset = 2.0f;
 
     //end 
@@ -116,8 +118,13 @@ public partial class player : CharacterBody2D
         //GD.Print("player y position:" + this.GlobalPosition.Y);
         //GD.Print("player y position:" + this.GlobalPosition.Y);
 
-        GD.Print("CanGlide: " + CanGlide);
-        GD.Print("GlideEnergy: " + GlideEnergy);
+        SimulatedPlayerPosition += (Speed * (float)delta) / 1000;
+        GD.Print("Player Speed: " + Speed);
+        GD.Print("Player 'position': " + SimulatedPlayerPosition);
+
+
+        //GD.Print("CanGlide: " + CanGlide);
+        // GD.Print("GlideEnergy: " + GlideEnergy);
 
 
         if (this.GlobalPosition.Y <= WaterLevel)
