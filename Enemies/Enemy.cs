@@ -11,6 +11,7 @@ public partial class Enemy : Area2D
 
     [Export]
     private AnimatedSprite2D spriteOld;
+
     [Export]
     private AnimatedSprite2D spriteNew;
 
@@ -35,7 +36,13 @@ public partial class Enemy : Area2D
     {
         if (body is player)
         {
+            GD.Print("Enemy hit something");
             Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * SpeedDecrement);
+
+           
+
+            //p.DamageFlickerSprite();
+
             canvas.Modulate = new Color(1, 1, 1, 1);
             GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
 
@@ -49,9 +56,11 @@ public partial class Enemy : Area2D
 
             }
 
-
+            player p = (player)body;
+            GD.Print("Cast succeeded");
+            p.DamageFlickerSprite();
         }
-        
+
         //
 
     }

@@ -14,14 +14,17 @@
 [ext_resource type="Script" uid="uid://cxtan5lbj87d5" path="res://Game/Barrier.cs" id="13_uo288"]
 [ext_resource type="Script" uid="uid://dfnflv4iols17" path="res://Game/Lose_Screen.cs" id="14_pyxum"]
 [ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="14_rgrvi"]
+[ext_resource type="Texture2D" uid="uid://cabf2d0x1h2a5" path="res://sprites/flyingfih.png" id="14_s2fqm"]
 [ext_resource type="Script" uid="uid://c8thax7e77xef" path="res://Game/DistanceTraveled.cs" id="15_pyxum"]
+[ext_resource type="Texture2D" uid="uid://qe0hrcy7ibq4" path="res://sprites/fly.png" id="15_tu2jh"]
+[ext_resource type="Texture2D" uid="uid://8eaylk0wmnrn" path="res://sprites/hurt.new.png" id="16_s2fqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(95, 2498)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y3828"]
 
-[node name="Game" type="Node2D" unique_id=1913227579]
+[node name="Game2" type="Node2D" unique_id=1913227579]
 script = ExtResource("1_1bn1w")
 
 [node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("2_rgrvi")]
@@ -77,8 +80,12 @@ position = Vector2(-260, 251)
 scale = Vector2(2.3547714, 2.3547714)
 texture = ExtResource("14_rgrvi")
 
-[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("4_y3828")]
+[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("Damagedtimer", "LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("4_y3828")]
 position = Vector2(680, -117)
+DefaultSprite = ExtResource("14_s2fqm")
+GlidingSprite = ExtResource("15_tu2jh")
+DamagedSprite = ExtResource("16_s2fqm")
+Damagedtimer = NodePath("DamagedTimer")
 LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
 FeetTraveled = NodePath("../CanvasLayer/DistanceTraveled")
 StuckUnderWaterTimer = NodePath("UnderWaterTimer")
@@ -88,6 +95,8 @@ StuckUnderWaterTimer = NodePath("UnderWaterTimer")
 [node name="GlideCooldown" type="Timer" parent="Player" unique_id=427724911]
 
 [node name="UnderWaterTimer" type="Timer" parent="Player" unique_id=2094208269]
+
+[node name="DamagedTimer" type="Timer" parent="Player" unique_id=1691916990]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=874307995]
 

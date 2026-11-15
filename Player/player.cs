@@ -3,13 +3,29 @@ using Godot;
 
 public partial class player : CharacterBody2D
 {
-	//public float Speed = 1500.0f;
-	public const float JumpVelocity = -400.0f;
+    //public float Speed = 1500.0f;
+    public const float JumpVelocity = -400.0f;
 
     public static float SpeedThreshhold = 1000.0f;
 
 
     //noahs variables
+
+    [Export]
+    public Sprite2D FishSprite;
+
+    [Export]
+    public Texture2D DefaultSprite;
+
+    [Export]
+    public Texture2D GlidingSprite;
+
+    [Export]
+    public Texture2D DamagedSprite;
+
+    [Export]
+    public Timer Damagedtimer;
+
 
     [Export]
     private Lose_Screen LoseScreen;
@@ -62,6 +78,7 @@ public partial class player : CharacterBody2D
 	{
         //LoseScreen.Position = this.Position;
 
+
         //GD.Print("ran ready");
         Vector2 velocity = new Vector2();
 		velocity.Y = 0;
@@ -99,6 +116,13 @@ public partial class player : CharacterBody2D
             GlidingCooldown.Start();
         };
         */
+
+        Damagedtimer.Timeout += () =>
+        {
+            FishSprite.Texture = DefaultSprite;
+            GD.Print("timed out");
+        };
+
     }
 
 	public override void _PhysicsProcess(double delta)
@@ -119,10 +143,10 @@ public partial class player : CharacterBody2D
         //GD.Print("player y position:" + this.GlobalPosition.Y);
 
         SimulatedPlayerPosition += (Globals.GetPlayerSpeedX() * (float)delta) / 1000;
-        GD.Print("Player Speed: " + Globals.GetPlayerSpeedX());
-        GD.Print("Player 'position': " + SimulatedPlayerPosition);
+        //GD.Print("Player Speed: " + Globals.GetPlayerSpeedX());
+        //GD.Print("Player 'position': " + SimulatedPlayerPosition);
 
-        GD.Print("FeetTraveled = " + FeetTraveled);
+        //GD.Print("FeetTraveled = " + FeetTraveled);
         FeetTraveled.Distance = (int)SimulatedPlayerPosition;
 
 
@@ -194,12 +218,16 @@ public partial class player : CharacterBody2D
 
 		// Handle Jump.
 		//	remove/edit later
+
+        /*
 		if (Input.IsActionJustPressed("jump"))
 		{
-			velocity.Y += JumpVelocity;
+            velocity.Y += JumpVelocity;
 		}
-		Velocity = velocity;
 
+        */
+		Velocity = velocity;
+        
 
         if (Input.IsActionPressed("slow_down"))
         {
@@ -243,11 +271,14 @@ public partial class player : CharacterBody2D
 
             GlideEnergy -= (float)delta;
 
+            FishSprite.Texture = GlidingSprite;
+
         }
         if (GlideEnergy <= 0)
         {
             GlideEnergy = 0;
             CanGlide = false;
+            FishSprite.Texture = DefaultSprite;
         }
 
         /*
@@ -275,7 +306,7 @@ public partial class player : CharacterBody2D
 
 		//needs some balancing but works
         //underwater movement
-        if (Input.IsActionPressed("jump") || Input.IsActionPressed("move_up"))
+        if (Input.IsActionPressed("move_up"))
         {
 			velocity.Y += UnderWaterMovementSpeed;
         }
@@ -285,6 +316,27 @@ public partial class player : CharacterBody2D
         }
         //GD.Print("ran UnderWaterMovement");
     }
+
+    public void DamageFlickerSprite()
+    {
+
+        GD.Print("Ran DamageFlickerSprite");
+
+
+        FishSprite.Texture = DamagedSprite;
+
+        //GD.Print("Ran DamageFlickerSprite");
+
+        Damagedtimer.Start();
+
+       
+
+
+
+    }
+
+
+    
 }
 
 	
