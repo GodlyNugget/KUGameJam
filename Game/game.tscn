@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://c7ujdvwp7xjyl" path="res://Enemies/Boat.cs" id="2_33n3b"]
 [ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="3_7raqb"]
 [ext_resource type="Texture2D" uid="uid://cd2nd5gb564b8" path="res://sprites/loose.png" id="3_72g0p"]
-[ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="3_rxmp4"]
 [ext_resource type="Script" uid="uid://bs67m8ny1ucuh" path="res://WinScreen.cs" id="4_4lqr4"]
 [ext_resource type="Script" uid="uid://c8thax7e77xef" path="res://Game/DistanceTraveled.cs" id="4_rxmp4"]
 [ext_resource type="Script" uid="uid://dfnflv4iols17" path="res://Game/Lose_Screen.cs" id="5_fwxkx"]
@@ -18,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dne2p8emjfh1m" path="res://TreatBoosts/LittleTreat.tscn" id="10_33n3b"]
 [ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_rxmp4"]
 [ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_qyr8x"]
+[ext_resource type="Texture2D" uid="uid://bgbt1ks1xlt2t" path="res://sprites/shipp.png" id="18_rxmp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyr8x"]
 size = Vector2(34, 1775.25)
@@ -81,36 +81,6 @@ offset_bottom = 465.55002
 layout_mode = 2
 text = "replay?"
 
-[node name="DistanceTraveled" type="Control" parent="CanvasLayer" unique_id=465564813 node_paths=PackedStringArray("_distanceTraveled")]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1.0
-offset_top = 594.0
-offset_right = 205.0
-offset_bottom = 636.0
-script = ExtResource("4_rxmp4")
-_distanceTraveled = NodePath("MarginContainer/Label")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DistanceTraveled" unique_id=1321585086]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.75000006
-anchor_bottom = 1.307
-offset_left = 12.0
-offset_top = -5.0
-offset_right = -1.5258789e-05
-offset_bottom = -4.991993
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=2130826764]
-layout_mode = 2
-color = Color(0.7607843, 0.76862746, 1, 1)
-
-[node name="Label" type="Label" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=383963400]
-layout_mode = 2
-theme_override_font_sizes/font_size = 23
-text = "0 Feet "
-horizontal_alignment = 1
-
 [node name="Win_Screen" type="Control" parent="CanvasLayer" unique_id=1050786024 node_paths=PackedStringArray("_restartButton")]
 visible = false
 layout_mode = 3
@@ -166,6 +136,37 @@ layout_mode = 2
 text = "replay?"
 
 [node name="TerrainManager2" parent="." unique_id=502845582 instance=ExtResource("3_7raqb")]
+[node name="DistanceTraveled" type="Control" parent="CanvasLayer" unique_id=465564813 node_paths=PackedStringArray("_distanceTraveled")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 594.0
+offset_right = 205.0
+offset_bottom = 636.0
+script = ExtResource("4_rxmp4")
+_distanceTraveled = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DistanceTraveled" unique_id=1321585086]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.75000006
+anchor_bottom = 1.307
+offset_left = 12.0
+offset_top = -5.0
+offset_right = -1.5258789e-05
+offset_bottom = -4.991993
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=2130826764]
+layout_mode = 2
+color = Color(0.7607843, 0.76862746, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=383963400]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "0 Feet "
+horizontal_alignment = 1
+
+[node name="TerrainManager" parent="." unique_id=502845582 node_paths=PackedStringArray("winScreen") instance=ExtResource("3_7raqb")]
 position = Vector2(0, 264)
 
 [node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("Damagedtimer", "LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
@@ -219,9 +220,9 @@ position = Vector2(-1210, -178)
 script = ExtResource("2_33n3b")
 
 [node name="Sprite2D" type="Sprite2D" parent="Boat" unique_id=1603834717]
-position = Vector2(-260, 251)
+position = Vector2(-294, 1382.0001)
 scale = Vector2(2.3547714, 2.3547714)
-texture = ExtResource("3_rxmp4")
+texture = ExtResource("18_rxmp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boat" unique_id=572319724]
 position = Vector2(-309, 836)
