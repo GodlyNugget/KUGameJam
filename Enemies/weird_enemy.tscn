@@ -30,11 +30,9 @@ radius = 98.045906
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3y8ua"]
 
-[node name="Weird_enemy" type="Area2D" unique_id=225205814 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
+[node name="Weird_enemy" type="Area2D" unique_id=225205814 node_paths=PackedStringArray("canvas")]
 script = ExtResource("1_3y8ua")
 MoveDirection = Vector2(-0.8, -0.2)
-spriteOld = NodePath("AnimatedSprite2D")
-spriteNew = NodePath("AnimatedSprite2D")
 canvas = NodePath("AnimatedSprite2D")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=397655595]

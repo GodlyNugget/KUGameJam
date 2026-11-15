@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://dece4s8v1paui" path="res://Game/Game.cs" id="1_7raqb"]
 [ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="1_bk3v5"]
+[ext_resource type="Script" uid="uid://c7ujdvwp7xjyl" path="res://Enemies/Boat.cs" id="2_33n3b"]
 [ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="3_7raqb"]
 [ext_resource type="Script" uid="uid://c8thax7e77xef" path="res://Game/DistanceTraveled.cs" id="3_72g0p"]
+[ext_resource type="Texture2D" uid="uid://cd2nd5gb564b8" path="res://sprites/loose.png" id="3_72g0p"]
+[ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="3_rxmp4"]
+[ext_resource type="Script" uid="uid://bs67m8ny1ucuh" path="res://WinScreen.cs" id="4_4lqr4"]
 [ext_resource type="Script" uid="uid://dfnflv4iols17" path="res://Game/Lose_Screen.cs" id="5_fwxkx"]
 [ext_resource type="PackedScene" uid="uid://bpc53navhwupd" path="res://Enemies/enemy_spawner.tscn" id="5_glinl"]
+[ext_resource type="Texture2D" uid="uid://dojqn5ng7styr" path="res://sprites/win.png" id="5_qlwvw"]
 [ext_resource type="PackedScene" uid="uid://cylt3eo1yp882" path="res://Enemies/lurker_enemy.tscn" id="6_72g0p"]
 [ext_resource type="PackedScene" uid="uid://bbyxns3l1g2ru" path="res://Enemies/speedy_enemy.tscn" id="7_4lqr4"]
 [ext_resource type="PackedScene" uid="uid://de5bf37k0kfey" path="res://Enemies/grouded_enemy.tscn" id="8_qlwvw"]
@@ -14,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_rxmp4"]
 [ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_qyr8x"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vqgxv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyr8x"]
+size = Vector2(34, 1775.25)
 
 [node name="Game" type="Node2D" unique_id=1913227579]
 script = ExtResource("1_7raqb")
@@ -48,8 +54,7 @@ offset_bottom = -62.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Lose_Screen/MarginContainer" unique_id=1270763985]
 position = Vector2(376.25003, 216.75)
-scale = Vector2(753.50006, 434.5)
-texture = SubResource("PlaceholderTexture2D_vqgxv")
+texture = ExtResource("3_72g0p")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Lose_Screen/MarginContainer" unique_id=473323217]
 layout_mode = 2
@@ -107,7 +112,63 @@ text = "0 Feet "
 horizontal_alignment = 1
 
 [node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("3_7raqb")]
+[node name="Win_Screen" type="Control" parent="CanvasLayer" unique_id=1050786024 node_paths=PackedStringArray("_restartButton")]
+layout_mode = 3
+anchor_left = 0.15900001
+anchor_top = -0.53900003
+anchor_right = 0.80100006
+anchor_bottom = 0.147
+offset_left = -17.168015
+offset_top = 460.27203
+offset_right = 143.24792
+offset_bottom = 506.74402
+script = ExtResource("4_4lqr4")
+_restartButton = NodePath("MarginContainer/VBoxContainer/Control/MarginContainer/Quit_Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Win_Screen" unique_id=297744098]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.34799957
+offset_top = -1.5500145
+offset_right = -88.0
+offset_bottom = -62.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Win_Screen/MarginContainer" unique_id=478649536]
+position = Vector2(376.25003, 216.75)
+texture = ExtResource("5_qlwvw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Win_Screen/MarginContainer" unique_id=1869630648]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer" unique_id=184450213]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 125)
+theme_override_font_sizes/font_size = 25
+text = "you're loser !    (replace later tatiana) "
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer" unique_id=874773957]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer/Control" unique_id=1256182783]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 176.0
+offset_right = 427.0
+offset_bottom = 239.0
+
+[node name="Quit_Button" type="Button" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=649674135]
+layout_mode = 2
+text = "replay?"
+
+[node name="TerrainManager" parent="." unique_id=822719518 node_paths=PackedStringArray("winScreen") instance=ExtResource("3_7raqb")]
 position = Vector2(0, 264)
+winTerrainAmmount = 10
+winScreen = NodePath("../CanvasLayer/Win_Screen")
 
 [node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
 position = Vector2(577, -27)
@@ -150,3 +211,17 @@ position = Vector2(1434, 1073)
 enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b"), ExtResource("12_qyr8x")])
 timerIntervul = 3.0
 maxDepth = 200
+
+[node name="Boat" type="Area2D" parent="." unique_id=1023523131 node_paths=PackedStringArray("loose")]
+position = Vector2(-1210, -178)
+script = ExtResource("2_33n3b")
+loose = NodePath("../CanvasLayer/Lose_Screen")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boat" unique_id=1603834717]
+position = Vector2(-260, 251)
+scale = Vector2(2.3547714, 2.3547714)
+texture = ExtResource("3_rxmp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat" unique_id=572319724]
+position = Vector2(-309, 836)
+shape = SubResource("RectangleShape2D_qyr8x")

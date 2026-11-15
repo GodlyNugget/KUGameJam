@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c1gp5nhsc685" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk2.cs" id="1_7p6cn"]
 [ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="1_up7j5"]
-[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_grk6s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppk1s"]
+atlas = ExtResource("1_up7j5")
+region = Rect2(0, 0, 284, 179)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywkkq"]
 atlas = ExtResource("1_up7j5")
@@ -12,10 +15,10 @@ region = Rect2(284, 0, 284, 179)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_grk6s")
+"texture": SubResource("AtlasTexture_ppk1s")
 }],
 "loop": 1,
-"name": &"Placeholder1",
+"name": &"Rock1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -50,13 +53,14 @@ position = Vector2(6129, 975)
 
 [node name="Display" type="Node2D" parent="." unique_id=144225019]
 
-[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=1492867781]
+[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=706480334]
+modulate = Color(0.51467294, 0.38872287, 0.8146889, 1)
 position = Vector2(0, 1471)
 sprite_frames = SubResource("SpriteFrames_doejt")
-animation = &"Placeholder1"
+animation = &"Rock1"
 
-[node name="Area2D" type="Area2D" parent="ObstacleBase" unique_id=1885039050]
+[node name="Area2D" type="Area2D" parent="ObstacleBase" unique_id=1523010896]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleBase/Area2D" unique_id=858841171]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleBase/Area2D" unique_id=611886638]
 position = Vector2(3, 13)
 shape = SubResource("CapsuleShape2D_7p6cn")

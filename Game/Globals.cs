@@ -4,7 +4,7 @@ using System;
 public partial class Globals : Node
 {
 	static float PlayerSpeedX = 1500;
-	static float BoatSpeedX = 1500;
+	static float BoatSpeedX = 300;
 
 	public static Globals Instance {get; private set;}
 	public override void _Ready()

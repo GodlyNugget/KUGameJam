@@ -1,12 +1,9 @@
 using System;
 using Godot;
 
-
-//THIS IS NEW VERISON
-
 public partial class player : CharacterBody2D
 {
-	//public float Speed = 2000.0f;
+	//public float Speed = 1500.0f;
 	public const float JumpVelocity = -400.0f;
 
     public static float SpeedThreshhold = 1000.0f;
