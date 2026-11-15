@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://0oco4vgp0g1x"]
 
+[ext_resource type="AudioStream" uid="uid://slud3uk4tn56" path="res://Audios/SadTimes.wav" id="1_3jpwb"]
+
 [node name="Lose_Screen" type="Control" unique_id=411117331]
 layout_mode = 3
 anchors_preset = 15
@@ -51,3 +53,6 @@ offset_bottom = 93.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Retry?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=327714800]
+stream = ExtResource("1_3jpwb")

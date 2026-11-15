@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqkeu7b3kotys" path="res://TreatBoosts/Treat.cs" id="1_wyjko"]
 [ext_resource type="Texture2D" uid="uid://dqpwcw0wxlxhd" path="res://sprites/small_treat.png" id="2_ft7ot"]
+[ext_resource type="AudioStream" uid="uid://cq4h8hdjgalp4" path="res://Audios/Eat.wav" id="3_dxtrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 
@@ -44,3 +45,6 @@ shape = SubResource("RectangleShape2D_3owqy")
 position = Vector2(0, 1)
 scale = Vector2(0.42857143, 0.42857143)
 sprite_frames = SubResource("SpriteFrames_3owqy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=706870952]
+stream = ExtResource("3_dxtrw")

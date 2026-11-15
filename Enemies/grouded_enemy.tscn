@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_0exv3"]
 [ext_resource type="Texture2D" uid="uid://rl152dhlivad" path="res://sprites/mine.png" id="1_k0442"]
+[ext_resource type="AudioStream" uid="uid://buv7luodufs8d" path="res://Audios/Boom.wav" id="3_wx45d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0exv3"]
 atlas = ExtResource("1_k0442")
@@ -65,3 +66,7 @@ sprite_frames = SubResource("SpriteFrames_kgrjj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373445540]
 position = Vector2(0, -269)
 shape = SubResource("CircleShape2D_3owqy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1242045608]
+stream = ExtResource("3_wx45d")
+volume_db = 12.0

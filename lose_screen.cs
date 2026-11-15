@@ -17,6 +17,11 @@ using System;
 
         public void ToggleScreen(bool shouldEnable)
         {
+            if (shouldEnable)
+        {
+            GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+        }
+            
             this.Visible = shouldEnable;
             GetTree().Paused = shouldEnable;
         }

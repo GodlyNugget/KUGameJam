@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqkeu7b3kotys" path="res://TreatBoosts/Treat.cs" id="1_3ayx0"]
 [ext_resource type="Texture2D" uid="uid://bj3cvf3nj0yhv" path="res://sprites/med_treat.png" id="2_f50fi"]
+[ext_resource type="AudioStream" uid="uid://cq4h8hdjgalp4" path="res://Audios/Eat.wav" id="3_x0e7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0e7o"]
 atlas = ExtResource("2_f50fi")
@@ -45,3 +46,6 @@ sprite_frames = SubResource("SpriteFrames_3owqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1226775208]
 shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1354578831]
+stream = ExtResource("3_x0e7o")

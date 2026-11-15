@@ -28,6 +28,7 @@ public partial class Treat : Area2D
     {
         if (body is player)
         {
+            GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
             Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * speedBostPercent); // make an export
             QueueFree();
         }
