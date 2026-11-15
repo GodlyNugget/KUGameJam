@@ -6,46 +6,66 @@ using Godot;
 
 public partial class player : CharacterBody2D
 {
-	public const float Speed = 2000.0f;
+	public float Speed = 2000.0f;
 	public const float JumpVelocity = -400.0f;
 
-    public static float SpeedThreshhold = 1000;
+    public static float SpeedThreshhold = 1000.0f;
 
 
-	//noahs variables
-    private lose_screen LoseScreen;
+    //noahs variables
+
+    [Export]
+    private Lose_Screen LoseScreen;
 
 	[Export]
 	public Timer StuckUnderWaterTimer;
 
-	public float TimeStuckUnderWater = 0.5f;
+	public float TimeStuckUnderWater = 0.45f;
 
+    /*
+    [Export]
+    public Timer GlidingCooldown;
+
+    public float GlidingTime = 3.0f;
+
+    [Export]
+    public Timer GlidingDuration;
+    */
+
+    public const float MaxGlideEnergy = 2.5f;
+    public float GlideEnergy = MaxGlideEnergy;
+
+
+    public bool CanGlide = true;
+
+    public bool IsGliding = false;
     public bool CanSwim = false;
 
     //probably change later, remember up is negative
-    public const float WaterLevel = 150;
+    public const float WaterLevel = 150.0f;
 
 	public float slowDescentAmount = 0.03f;
 
 
     //maybe change to different variable??
-    public float UnderWaterMovementSpeed = JumpVelocity / 12f;
+    public float UnderWaterMovementSpeed = JumpVelocity / 12.0f;
 
     public bool AboveWater = true;
-    public float WaterLevelOffset = 2;
+
+    //public float WaterLevelOffset = 2.0f;
 
     //end 
 
     public override void _Ready()
 	{
-		//GD.Print("ran ready");
-		Vector2 velocity = new Vector2();
+        LoseScreen.Position = this.Position;
+
+        //GD.Print("ran ready");
+        Vector2 velocity = new Vector2();
 		velocity.Y = 0;
 		Velocity = velocity;
 
-        Globals.SetPlayerSpeedX((float)2000);
-
-        StuckUnderWaterTimer = GetNode<Timer>("StuckUnderWaterTimer");
+        StuckUnderWaterTimer = GetNode<Timer>("UnderWaterTimer");
         StuckUnderWaterTimer.WaitTime = TimeStuckUnderWater;
 
         StuckUnderWaterTimer.Timeout += () =>
@@ -54,6 +74,29 @@ public partial class player : CharacterBody2D
             CanSwim = true;
         };
 
+        /*
+        GlidingCooldown = GetNode<Timer>("GlideCooldown");
+        //maybe change duration variable later
+        GlidingCooldown.WaitTime = GlidingTime;
+
+        GlidingCooldown.Timeout += () =>
+        {
+            GD.Print("Cooldown finished");
+            CanGlide = true;
+        };
+
+
+        GlidingDuration = GetNode<Timer>("GlideTime");
+        GlidingDuration.WaitTime = GlidingTime;
+
+        GlidingDuration.Timeout += () =>
+        {
+            GD.Print("Duration finished");
+            IsGliding = false;
+            CanGlide = false;
+            GlidingCooldown.Start();
+        };
+        */
     }
 
 	public override void _PhysicsProcess(double delta)
@@ -73,7 +116,7 @@ public partial class player : CharacterBody2D
         //GD.Print("player y position:" + this.GlobalPosition.Y);
 		//GD.Print("player y position:" + this.GlobalPosition.Y);
 
-		if (this.GlobalPosition.Y <= WaterLevel)
+        if (this.GlobalPosition.Y <= WaterLevel)
 		{
 
             //add boost when exiting water??
@@ -107,9 +150,12 @@ public partial class player : CharacterBody2D
 		{
             //underwater stuff 
             AboveWater = false;
+            CanGlide = true;
+
+            GlideEnergy = MaxGlideEnergy;
 
             //abrupt slow in descent
-			//i'm lerping it
+            //i'm lerping it
             velocity.Y = Mathf.Lerp(velocity.Y, 0.0f, slowDescentAmount);
 
             //once this has stop had timer until you can use UnderWaterMovement
@@ -141,6 +187,11 @@ public partial class player : CharacterBody2D
 		Velocity = velocity;
 
 
+        if (Input.IsActionPressed("slow_down"))
+        {
+            Globals.SetPlayerSpeedX((float)0);
+        }
+
 
 		if (Globals.GetPlayerSpeedX() < SpeedThreshhold)
 		{
@@ -151,16 +202,59 @@ public partial class player : CharacterBody2D
 	}
 	private void GlideMovement(double delta, ref Vector2 velocity)
 	{
+        /*
+        GD.Print("CanGlide: " + CanGlide);
+        GD.Print(GlidingDuration);
+        GD.Print(GlidingCooldown);
+        GD.Print("GlidingDuration: " + GlidingDuration.IsStopped());
+        GD.Print("GlidingCooldown: " + GlidingCooldown.IsStopped());
+        GD.Print("Glyding Time Left: " + GlidingDuration.TimeLeft);
+        GD.Print("Glyding Cooldown Timet: " + GlidingDuration.TimeLeft);
+        */
+
+        if (CanGlide && GlideEnergy > 0)
+        {   
+            /*
+            if (GlidingDuration.IsStopped())
+            {
+                GlidingDuration.Start();
+            }
+            */
+
+            //IsGliding = true;
+            //GlidingDuration.Start();
+
+            velocity.Y = Mathf.Min(velocity.Y, 100.0f);
+            GD.Print("start glide");
+
+            GlideEnergy -= (float)delta;
+
+        }
+        if (GlideEnergy <= 0)
+        {
+            GlideEnergy = 0;
+            CanGlide = false;
+        }
+
+        /*
+        if (IsGliding)
+        {
+            velocity.Y = Mathf.Min(velocity.Y, 100.0f);
+            GD.Print("gliding");
+        }
+        */
+        //GlidingDuration.Start();
 
 
         //add cooldown
 
 
-        velocity.Y = Mathf.Min(velocity.Y, 100.0f); 
+        //velocity.Y = Mathf.Min(velocity.Y, 100.0f);
+        //GD.Print("gliding");
 
         //velocity += GetGravity() * slowDescentAmount * (float)delta;
-		//GD.Print("ran GlideMovement");
-	}
+        //GD.Print("ran GlideMovement");
+    }
 
 	private void UnderWaterMovement(double delta, ref Vector2 velocity)
 	{
@@ -177,6 +271,7 @@ public partial class player : CharacterBody2D
         }
         //GD.Print("ran UnderWaterMovement");
     }
+
 
 }
 
