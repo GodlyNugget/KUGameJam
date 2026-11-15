@@ -1,24 +1,21 @@
 [gd_scene format=3 uid="uid://jlp074qs43it"]
 
-[ext_resource type="Script" uid="uid://dac5ift8v0uua" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk2.cs" id="1_doejt"]
-[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="2_doejt"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppk1s"]
-atlas = ExtResource("2_doejt")
-region = Rect2(0, 0, 284, 179)
+[ext_resource type="Script" uid="uid://c1gp5nhsc685" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk2.cs" id="1_7p6cn"]
+[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="1_up7j5"]
+[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_grk6s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ywkkq"]
-atlas = ExtResource("2_doejt")
+atlas = ExtResource("1_up7j5")
 region = Rect2(284, 0, 284, 179)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7p6cn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_doejt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ppk1s")
+"texture": ExtResource("2_grk6s")
 }],
 "loop": 1,
-"name": &"Rock1",
+"name": &"Placeholder1",
 "speed": 5.0
 }, {
 "frames": [{
@@ -30,26 +27,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Chunk2" type="Node2D" unique_id=1261258572]
-script = ExtResource("1_doejt")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p6cn"]
+radius = 76.0
+height = 186.0
 
-[node name="Boundaries" type="Node2D" parent="." unique_id=2074218874]
+[node name="Chunk2" type="Node2D" unique_id=1756595490]
+script = ExtResource("1_7p6cn")
 
-[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=1515300625]
+[node name="Boundaries" type="Node2D" parent="." unique_id=1974548352]
+
+[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=417859030]
 position = Vector2(0, -975)
 
-[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=562998617]
-position = Vector2(4267, -975)
+[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=1783212611]
+position = Vector2(6129, -975)
 
-[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=1629632302]
+[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=914747349]
 position = Vector2(0, 975)
 
-[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=701838907]
-position = Vector2(4267, 975)
+[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=601514881]
+position = Vector2(6129, 975)
 
-[node name="Display" type="Node2D" parent="." unique_id=1238718586]
+[node name="Display" type="Node2D" parent="." unique_id=144225019]
 
-[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=619962000]
+[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=1492867781]
 position = Vector2(0, 1471)
-sprite_frames = SubResource("SpriteFrames_7p6cn")
-animation = &"Rock1"
+sprite_frames = SubResource("SpriteFrames_doejt")
+animation = &"Placeholder1"
+
+[node name="Area2D" type="Area2D" parent="ObstacleBase" unique_id=1885039050]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleBase/Area2D" unique_id=858841171]
+position = Vector2(3, 13)
+shape = SubResource("CapsuleShape2D_7p6cn")

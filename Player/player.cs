@@ -55,7 +55,7 @@ public partial class player : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		Globals.SetPlayerSpeedX((float)2000);
+		//Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 
 		// Add the gravity.
