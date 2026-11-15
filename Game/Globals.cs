@@ -4,6 +4,7 @@ using System;
 public partial class Globals : Node
 {
 	static float PlayerSpeedX = 1500;
+	static float BoatSpeedX = 1500;
 
 	public static Globals Instance {get; private set;}
 	public override void _Ready()
@@ -18,6 +19,16 @@ public partial class Globals : Node
 	public static void SetPlayerSpeedX(float newPlayerSpeedX)
     {
         PlayerSpeedX = newPlayerSpeedX;
+    }
+
+    // constantly goes up at a rate 
+    public static float GetBoatSpeedX()
+    {
+        return BoatSpeedX;
+    }
+    public static void SetBoatSpeedX(float newsBoatSpeedY)
+    {
+        BoatSpeedX = newsBoatSpeedY;
     }
 
 }
