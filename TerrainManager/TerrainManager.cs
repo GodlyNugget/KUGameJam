@@ -34,13 +34,14 @@ public partial class TerrainManager : Node2D
 		//Create new Terrain
 		CurrentTerrain = NextTerrain;
 		NextTerrain = PickNextTerrain();
+		//Set the new Terrain's position based on the width of the current one
 		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
 	}
 
 	private Terrain PickNextTerrain()
 	{
-		//Create a new Terrain. Terrain scene should randomly pick a level design
+		//Create a new Terrain
 		return (Terrain)ResourceLoader.Load<PackedScene>("res://TerrainManager/Terrain/terrain.tscn").Instantiate();
 	}
 }

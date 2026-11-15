@@ -22,6 +22,7 @@ public partial class Terrain : Node2D
 
 	public void SetNextPosition(Terrain curr)
 	{
+		//Gets the x position of the Current Terrain's right boundary. Used to put the Next Terrain after the Current Terrain
 		Position = new Vector2(curr.GetChild(1).GetNode<Node2D>("Boundaries/TopRight").Position.X, 0);
 	}
 
