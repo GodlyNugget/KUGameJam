@@ -1,6 +1,9 @@
 using System;
 using Godot;
 
+
+//THIS IS NEW VERISON
+
 public partial class player : CharacterBody2D
 {
 	public const float Speed = 2000.0f;
@@ -22,17 +25,18 @@ public partial class player : CharacterBody2D
     //probably change later, remember up is negative
     public const float WaterLevel = 150;
 
-	public float slowDescentAmount = 0.025f;
+	public float slowDescentAmount = 0.03f;
 
 
     //maybe change to different variable??
-    public float UnderWaterMovementSpeed = JumpVelocity / 10;
+    public float UnderWaterMovementSpeed = JumpVelocity / 12f;
 
     public bool AboveWater = true;
+    public float WaterLevelOffset = 2;
 
-	//end 
+    //end 
 
-	public override void _Ready()
+    public override void _Ready()
 	{
 		//GD.Print("ran ready");
 		Vector2 velocity = new Vector2();
@@ -58,17 +62,30 @@ public partial class player : CharacterBody2D
 		Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 
-		// Add the gravity.
-		//velocity += GetGravity() * (float)delta;
+        // Add the gravity.
+        //velocity += GetGravity() * (float)delta;
 
-		GD.Print("player y position:" + this.GlobalPosition.Y);
+        //GD.Print("player y position:" + this.GlobalPosition.Y);
+        //GD.Print(AboveWater);
+        //GD.Print(WaterLevel - WaterLevelOffset);
+
+        GD.Print("player y position:" + this.GlobalPosition.Y);
 
 		if (this.GlobalPosition.Y <= WaterLevel)
 		{
 
-			//add boost when exiting water??
+            //add boost when exiting water??
+            if (!AboveWater)
+            {
+                //splash animation, looking at you here Tatiana
 
-			AboveWater = true;
+                velocity.Y += JumpVelocity / 2;
+                GD.Print("Jump Splash");
+
+            }
+
+
+            AboveWater = true;
 
             velocity += GetGravity() * (float)delta;
 
@@ -132,6 +149,10 @@ public partial class player : CharacterBody2D
 	}
 	private void GlideMovement(double delta, ref Vector2 velocity)
 	{
+
+
+        //add cooldown
+
 
         velocity.Y = Mathf.Min(velocity.Y, 100.0f); 
 
