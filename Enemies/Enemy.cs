@@ -37,6 +37,7 @@ public partial class Enemy : Area2D
         {
             Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * SpeedDecrement);
             canvas.Modulate = new Color(1, 1, 1, 1);
+            GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
 
             if (spriteNew != null) { 
 

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="1_tfksj"]
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_uesg3"]
+[ext_resource type="AudioStream" uid="uid://b03n2t1s32gky" path="res://Audios/Chomp.wav" id="3_f740h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uesg3"]
 atlas = ExtResource("1_tfksj")
@@ -68,7 +69,6 @@ size = Vector2(243, 121)
 script = ExtResource("1_uesg3")
 spriteOld = NodePath("Sprite2D")
 spriteNew = NodePath("AnimatedSprite2D")
-SpeedDecrement = 0.9
 canvas = NodePath(".")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=685465892]
@@ -85,3 +85,6 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717279748]
 position = Vector2(-50.5, 15)
 shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1644008332]
+stream = ExtResource("3_f740h")

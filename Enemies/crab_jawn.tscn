@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_bo4wm"]
 [ext_resource type="Texture2D" uid="uid://ba5npmlnbn77r" path="res://sprites/crab.png" id="2_bo4wm"]
+[ext_resource type="AudioStream" uid="uid://tgrv3viq0fem" path="res://Audios/Pinch.wav" id="3_4eicn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4eicn"]
 atlas = ExtResource("2_bo4wm")
@@ -74,3 +75,6 @@ frame_progress = 0.101068065
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766533875]
 position = Vector2(1, -168)
 shape = SubResource("RectangleShape2D_3owqy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1389469683]
+stream = ExtResource("3_4eicn")

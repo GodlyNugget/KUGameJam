@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bf4sb453xn7l4" path="res://sprites/muncher.png" id="1_e4470"]
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_frkk0"]
+[ext_resource type="AudioStream" uid="uid://bpdxr0w7ysinm" path="res://Audios/Jumpscare.wav" id="3_8j238"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y8ua"]
 radius = 44.0
@@ -27,3 +28,6 @@ texture = ExtResource("1_e4470")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1651132573]
 sprite_frames = SubResource("SpriteFrames_kgrjj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=232170133]
+stream = ExtResource("3_8j238")
