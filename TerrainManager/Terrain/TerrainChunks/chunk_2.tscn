@@ -1,8 +1,37 @@
 [gd_scene format=3 uid="uid://jlp074qs43it"]
 
-[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="1_up7j5"]
+[ext_resource type="Script" uid="uid://dac5ift8v0uua" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk2.cs" id="1_doejt"]
+[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="2_doejt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppk1s"]
+atlas = ExtResource("2_doejt")
+region = Rect2(0, 0, 284, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywkkq"]
+atlas = ExtResource("2_doejt")
+region = Rect2(284, 0, 284, 179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p6cn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppk1s")
+}],
+"loop": 1,
+"name": &"Rock1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywkkq")
+}],
+"loop": 1,
+"name": &"Rock2",
+"speed": 5.0
+}]
 
 [node name="Chunk2" type="Node2D" unique_id=1261258572]
+script = ExtResource("1_doejt")
 
 [node name="Boundaries" type="Node2D" parent="." unique_id=2074218874]
 
@@ -20,7 +49,7 @@ position = Vector2(4267, 975)
 
 [node name="Display" type="Node2D" parent="." unique_id=1238718586]
 
-[node name="BigTreat" type="Sprite2D" parent="Display" unique_id=881140409]
-position = Vector2(2133.5, 727)
-scale = Vector2(33.335938, 3.8749998)
-texture = ExtResource("1_up7j5")
+[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=619962000]
+position = Vector2(0, 1471)
+sprite_frames = SubResource("SpriteFrames_7p6cn")
+animation = &"Rock1"

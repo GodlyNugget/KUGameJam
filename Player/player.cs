@@ -45,7 +45,7 @@ public partial class player : CharacterBody2D
 
         StuckUnderWaterTimer.Timeout += () =>
         {
-            GD.Print("TIMER FIRED");
+            //GD.Print("TIMER FIRED");
             CanSwim = true;
         };
 
@@ -61,7 +61,7 @@ public partial class player : CharacterBody2D
 		// Add the gravity.
 		//velocity += GetGravity() * (float)delta;
 
-		GD.Print("player y position:" + this.GlobalPosition.Y);
+		//GD.Print("player y position:" + this.GlobalPosition.Y);
 
 		if (this.GlobalPosition.Y <= WaterLevel)
 		{
@@ -101,9 +101,9 @@ public partial class player : CharacterBody2D
             }
 
             //GD.Print(StuckUnderWaterTimer);
-            GD.Print("CanSwim: " + CanSwim);
-			GD.Print("StuckUnderWaterTimer:" + StuckUnderWaterTimer.IsStopped());
-			GD.Print("Time Left:" + StuckUnderWaterTimer.TimeLeft);
+            //GD.Print("CanSwim: " + CanSwim);
+			//GD.Print("StuckUnderWaterTimer:" + StuckUnderWaterTimer.IsStopped());
+			//GD.Print("Time Left:" + StuckUnderWaterTimer.TimeLeft);
 
             if (CanSwim)
 			{
@@ -136,7 +136,7 @@ public partial class player : CharacterBody2D
         velocity.Y = Mathf.Min(velocity.Y, 100.0f); 
 
         //velocity += GetGravity() * slowDescentAmount * (float)delta;
-		GD.Print("ran GlideMovement");
+		//GD.Print("ran GlideMovement");
 	}
 
 	private void UnderWaterMovement(double delta, ref Vector2 velocity)
@@ -152,7 +152,7 @@ public partial class player : CharacterBody2D
 		{
 			velocity.Y -= UnderWaterMovementSpeed;
         }
-        GD.Print("ran UnderWaterMovement");
+        //GD.Print("ran UnderWaterMovement");
     }
 
 }
