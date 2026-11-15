@@ -22,11 +22,11 @@ animations = [{
 radius = 36.0
 height = 542.0
 
-[node name="Speedy_enemy" type="Area2D" unique_id=982543846 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_frkk0"]
+
+[node name="Speedy_enemy" type="Area2D" unique_id=982543846 node_paths=PackedStringArray("canvas")]
 script = ExtResource("1_w37mc")
 MoveSpeed = 30.0
-spriteOld = NodePath("AnimatedSprite2D")
-spriteNew = NodePath("AnimatedSprite2D")
 SpeedDecrement = 0.85
 canvas = NodePath(".")
 
@@ -41,3 +41,4 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3owqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1408057588]
+sprite_frames = SubResource("SpriteFrames_frkk0")

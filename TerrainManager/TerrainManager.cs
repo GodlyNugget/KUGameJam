@@ -7,8 +7,16 @@ public partial class TerrainManager : Node2D
 	Terrain CurrentTerrain;
 	Terrain NextTerrain;
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	int terrainCounter = 0;
+
+	[Export]
+	int winTerrainAmmount = 3; // after completing 3 biomes toogle win screen
+
+	[Export]
+	private WinScreen winScreen;
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
 	{
 		//Set up initial terrains
 		CurrentTerrain = PickNextTerrain();
@@ -22,8 +30,8 @@ public partial class TerrainManager : Node2D
 	public override void _Process(double delta)
 	{
 		//Move Terrains left
-		CurrentTerrain.Position -= new Vector2(Globals.GetPlayerSpeedX() * (float)delta, 0);
-		NextTerrain.Position -= new Vector2(Globals.GetPlayerSpeedX() * (float)delta, 0);
+		CurrentTerrain.Position -= new Vector2((Globals.GetPlayerSpeedX() /1500) , 0) * 10;
+		NextTerrain.Position -= new Vector2((Globals.GetPlayerSpeedX() / 1500) , 0) * 10;
 	}
 
 	//Called by Terrain scene when leaving the screen
@@ -37,7 +45,14 @@ public partial class TerrainManager : Node2D
 		//Set the new Terrain's position based on the width of the current one
 		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
-	}
+
+		terrainCounter++;
+		if (winTerrainAmmount == terrainCounter)
+		{
+			winScreen.ToggleScreen(true);
+		}
+
+    }
 
 	private Terrain PickNextTerrain()
 	{
