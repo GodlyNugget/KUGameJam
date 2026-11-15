@@ -30,7 +30,7 @@ public partial class Enemy : Area2D
     {
         if (body is player)
         {
-            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() - SpeedMdifier);
+            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() - SpeedDecrement);
             canvas.Modulate = new Color(1, 1, 1, 1);
         }
         else // if the despawn wall

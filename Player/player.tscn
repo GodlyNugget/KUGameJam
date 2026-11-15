@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrwn2"]
 size = Vector2(144, 62)
 
-[node name="Player" type="CharacterBody2D" unique_id=1242398821 node_paths=PackedStringArray("StuckUnderWaterTimer")]
+[node name="Player" type="CharacterBody2D" unique_id=1242398821]
 script = ExtResource("1_4ntmi")
-StuckUnderWaterTimer = NodePath("StuckUnderWaterTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597792614]
 position = Vector2(-288, 0)
@@ -22,7 +21,9 @@ shape = SubResource("RectangleShape2D_xrwn2")
 [node name="StuckUnderWaterTimer" type="Timer" parent="." unique_id=663272231]
 wait_time = 10.0
 one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1546958647]
+limit_enabled = false
 limit_top = -1100
 limit_bottom = 1050
 position_smoothing_enabled = true
