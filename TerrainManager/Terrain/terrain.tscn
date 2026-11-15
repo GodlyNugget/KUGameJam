@@ -1,31 +1,9 @@
 [gd_scene format=3 uid="uid://bf3svkylf3ew"]
 
 [ext_resource type="Script" uid="uid://b0t7ly1rdfcu0" path="res://TerrainManager/Terrain/Terrain.cs" id="1_3iwhe"]
-[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_mqoaj"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kccs3"]
 
 [node name="Terrain" type="Node2D" unique_id=2130390171]
 script = ExtResource("1_3iwhe")
-
-[node name="Objects" type="Node2D" parent="." unique_id=2111354121]
-
-[node name="Floor" type="StaticBody2D" parent="Objects" unique_id=2005812200]
-position = Vector2(0, 975)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Floor" unique_id=1764850359]
-shape = SubResource("WorldBoundaryShape2D_kccs3")
-
-[node name="Ceiling" type="StaticBody2D" parent="Objects" unique_id=1194575608]
-position = Vector2(0, -975)
-rotation = 3.1415927
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Ceiling" unique_id=1081973748]
-shape = SubResource("WorldBoundaryShape2D_kccs3")
-
-[node name="Sprite2D" type="Sprite2D" parent="Objects" unique_id=1257690748]
-position = Vector2(0, 818)
-texture = ExtResource("2_mqoaj")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
 position = Vector2(-975, -975)

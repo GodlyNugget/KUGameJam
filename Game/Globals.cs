@@ -3,7 +3,7 @@ using System;
 
 public partial class Globals : Node
 {
-	static float PlayerSpeedX = 2000;
+	static float PlayerSpeedX = 1500;
 
 	public static Globals Instance {get; private set;}
 	public override void _Ready()

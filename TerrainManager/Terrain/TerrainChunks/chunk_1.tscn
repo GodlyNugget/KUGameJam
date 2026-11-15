@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bny34b5krfwkf"]
+
+[ext_resource type="Texture2D" uid="uid://bf4sb453xn7l4" path="res://sprites/muncher.png" id="1_ppk1s"]
+[ext_resource type="Texture2D" uid="uid://brkxh1eieldt" path="res://sprites/fake_treater.png" id="2_ywkkq"]
+[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="3_y3f8b"]
+
+[node name="Chunk1" type="Node2D" unique_id=1790027824]
+
+[node name="Boundaries" type="Node" parent="." unique_id=1936377697]
+
+[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=1033536484]
+position = Vector2(-975, -975)
+
+[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=446294981]
+position = Vector2(3295, -975)
+
+[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=1799648198]
+position = Vector2(-975, 975)
+
+[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=1570706621]
+position = Vector2(3295, 975)
+
+[node name="Muncher" type="Sprite2D" parent="." unique_id=1526050235]
+position = Vector2(-538, 304)
+texture = ExtResource("1_ppk1s")
+
+[node name="FakeTreater" type="Sprite2D" parent="." unique_id=1716257509]
+position = Vector2(781, -691)
+texture = ExtResource("2_ywkkq")
+
+[node name="BigTreat" type="Sprite2D" parent="." unique_id=1980922368]
+position = Vector2(2045, 405)
+texture = ExtResource("3_y3f8b")

@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://do2wj340pbb15" path="res://TerrainManager/TerrainManager.cs" id="1_kcer5"]
 
 [sub_resource type="Gradient" id="Gradient_0tn3e"]
-offsets = PackedFloat32Array(0, 0.68028843, 0.68990386, 1)
+offsets = PackedFloat32Array(0, 0.53614455, 0.6084337, 1)
 colors = PackedColorArray(0.05690778, 0.47377402, 0.44506764, 1, 0.271001, 0.69286674, 0.9491897, 1, 0.7945443, 0.8478975, 0.7536133, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_kcer5"]
 gradient = SubResource("Gradient_0tn3e")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0tn3e"]
 
 [node name="TerrainManager" type="Node2D" unique_id=822719518]
 script = ExtResource("1_kcer5")
@@ -32,3 +34,18 @@ offset_top = 975.0
 offset_right = 626.0
 offset_bottom = 1351.0
 color = Color(0.8007289, 0.8007291, 7.70092e-07, 1)
+
+[node name="Restrictions" type="Node2D" parent="." unique_id=1809946953]
+
+[node name="Floor" type="StaticBody2D" parent="Restrictions" unique_id=329474272]
+position = Vector2(0, 975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Restrictions/Floor" unique_id=1663539956]
+shape = SubResource("WorldBoundaryShape2D_0tn3e")
+
+[node name="Ceiling" type="StaticBody2D" parent="Restrictions" unique_id=1418687839]
+position = Vector2(0, -975)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Restrictions/Ceiling" unique_id=1179473958]
+shape = SubResource("WorldBoundaryShape2D_0tn3e")
