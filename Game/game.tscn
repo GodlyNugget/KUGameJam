@@ -72,10 +72,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Lose_Screen/MarginContainer/VBoxContainer/Control" unique_id=1666809638]
 layout_mode = 0
-offset_left = 301.0
-offset_top = 176.0
-offset_right = 427.0
-offset_bottom = 239.0
+offset_left = 304.95203
+offset_top = 402.55002
+offset_right = 430.95203
+offset_bottom = 465.55002
 
 [node name="Quit_Button" type="Button" parent="CanvasLayer/Lose_Screen/MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=250530412]
 layout_mode = 2
@@ -126,15 +126,16 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer/Control" unique_id=1256182783]
 layout_mode = 0
-offset_left = 301.0
-offset_top = 176.0
-offset_right = 427.0
-offset_bottom = 239.0
+offset_left = 313.95203
+offset_top = 428.55002
+offset_right = 439.95203
+offset_bottom = 491.55002
 
 [node name="Quit_Button" type="Button" parent="CanvasLayer/Win_Screen/MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=649674135]
 layout_mode = 2
 text = "replay?"
 
+[node name="TerrainManager2" parent="." unique_id=502845582 instance=ExtResource("3_7raqb")]
 [node name="DistanceTraveled" type="Control" parent="CanvasLayer" unique_id=465564813 node_paths=PackedStringArray("_distanceTraveled")]
 layout_mode = 3
 anchors_preset = 0
@@ -167,16 +168,18 @@ horizontal_alignment = 1
 
 [node name="TerrainManager" parent="." unique_id=502845582 node_paths=PackedStringArray("winScreen") instance=ExtResource("3_7raqb")]
 position = Vector2(0, 264)
-winTerrainAmmount = 10
-winScreen = NodePath("../CanvasLayer/Win_Screen")
 
-[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
+[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("Damagedtimer", "LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
 position = Vector2(577, -27)
+Damagedtimer = NodePath("Damaged")
 LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
 FeetTraveled = NodePath("../CanvasLayer/DistanceTraveled")
 StuckUnderWaterTimer = NodePath("UnderWaterTimer")
 
 [node name="UnderWaterTimer" type="Timer" parent="Player" unique_id=351804931]
+
+[node name="Damaged" type="Timer" parent="Player" unique_id=414008751]
+wait_time = 0.5
 
 [node name="EnemySpawner" parent="." unique_id=261364985 instance=ExtResource("5_glinl")]
 position = Vector2(1271, 37)
@@ -212,10 +215,9 @@ enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4
 timerIntervul = 3.0
 maxDepth = 200
 
-[node name="Boat" type="Area2D" parent="." unique_id=1023523131 node_paths=PackedStringArray("loose")]
+[node name="Boat" type="Area2D" parent="." unique_id=1023523131]
 position = Vector2(-1210, -178)
 script = ExtResource("2_33n3b")
-loose = NodePath("../CanvasLayer/Lose_Screen")
 
 [node name="Sprite2D" type="Sprite2D" parent="Boat" unique_id=1603834717]
 position = Vector2(-294, 1382.0001)
