@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dne2p8emjfh1m" path="res://TreatBoosts/LittleTreat.tscn" id="10_33n3b"]
 [ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_rxmp4"]
 [ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_qyr8x"]
+[ext_resource type="AudioStream" uid="uid://d1jd1anww7662" path="res://Game/FiletinFishMMTheme1.mp3" id="19_qyr8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyr8x"]
 size = Vector2(34, 1775.25)
@@ -224,3 +225,10 @@ texture = ExtResource("3_rxmp4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boat" unique_id=572319724]
 position = Vector2(-309, 836)
 shape = SubResource("RectangleShape2D_qyr8x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=734003951]
+process_mode = 3
+stream = ExtResource("19_qyr8x")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="MusicEnded"]

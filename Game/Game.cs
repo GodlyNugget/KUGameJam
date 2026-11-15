@@ -13,4 +13,9 @@ public partial class Game : Node2D
 	public override void _Process(double delta)
 	{
 	}
+
+	public void MusicEnded()
+	{
+		GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+	}
 }
