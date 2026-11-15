@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b62ec7nw1nide"]
+
+[ext_resource type="Script" uid="uid://dece4s8v1paui" path="res://Game/Game.cs" id="1_1bn1w"]
+[ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="2_rgrvi"]
+[ext_resource type="PackedScene" uid="uid://0oco4vgp0g1x" path="res://LoseScreen/LoseScreen.tscn" id="3_pyxum"]
+[ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="4_y3828"]
+[ext_resource type="PackedScene" uid="uid://bpc53navhwupd" path="res://Enemies/enemy_spawner.tscn" id="5_r14xg"]
+[ext_resource type="PackedScene" uid="uid://cylt3eo1yp882" path="res://Enemies/lurker_enemy.tscn" id="6_s2fqm"]
+[ext_resource type="PackedScene" uid="uid://bbyxns3l1g2ru" path="res://Enemies/speedy_enemy.tscn" id="7_tu2jh"]
+[ext_resource type="PackedScene" uid="uid://de5bf37k0kfey" path="res://Enemies/grouded_enemy.tscn" id="8_745b4"]
+[ext_resource type="PackedScene" uid="uid://dmkrvm7v7tqks" path="res://Enemies/crab_jawn.tscn" id="9_d22mq"]
+[ext_resource type="PackedScene" uid="uid://dne2p8emjfh1m" path="res://TreatBoosts/LittleTreat.tscn" id="10_hao2f"]
+[ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_n42lo"]
+[ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_gjr0r"]
+[ext_resource type="Script" uid="uid://cxtan5lbj87d5" path="res://Game/Barrier.cs" id="13_uo288"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
+size = Vector2(95, 2498)
+
+[node name="Game" type="Node2D" unique_id=1913227579]
+script = ExtResource("1_1bn1w")
+
+[node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("2_rgrvi")]
+position = Vector2(0, 264)
+
+[node name="LoseScreen" parent="." unique_id=411117331 instance=ExtResource("3_pyxum")]
+visible = false
+
+[node name="Player" parent="." unique_id=1242398821 instance=ExtResource("4_y3828")]
+position = Vector2(625, 0)
+
+[node name="EnemySpawner" parent="." unique_id=261364985 instance=ExtResource("5_r14xg")]
+position = Vector2(1271, 37)
+maxDepth = 500
+
+[node name="EnemySpawner2" parent="." unique_id=1610647898 instance=ExtResource("5_r14xg")]
+position = Vector2(1284, 740)
+enemySpawns = Array[PackedScene]([ExtResource("6_s2fqm"), ExtResource("7_tu2jh")])
+maxDepth = 1000
+
+[node name="EnemySpawner3" parent="." unique_id=1015777768 instance=ExtResource("5_r14xg")]
+position = Vector2(1284, 1262)
+enemySpawns = Array[PackedScene]([ExtResource("8_745b4"), ExtResource("9_d22mq")])
+
+[node name="treat spawner" parent="." unique_id=1978648988 instance=ExtResource("5_r14xg")]
+position = Vector2(1512, -4)
+enemySpawns = Array[PackedScene]([ExtResource("10_hao2f"), ExtResource("11_n42lo"), ExtResource("10_hao2f")])
+timerIntervul = 1.0
+maxDepth = 1000
+
+[node name="treat spawner3" parent="." unique_id=201352000 instance=ExtResource("5_r14xg")]
+position = Vector2(1365, -14)
+enemySpawns = Array[PackedScene]([ExtResource("10_hao2f")])
+timerIntervul = 1.0
+maxDepth = 500
+
+[node name="treat spawner2" parent="." unique_id=1232873924 instance=ExtResource("5_r14xg")]
+position = Vector2(1439, 765)
+enemySpawns = Array[PackedScene]([ExtResource("10_hao2f"), ExtResource("11_n42lo"), ExtResource("10_hao2f"), ExtResource("12_gjr0r")])
+timerIntervul = 1.0
+maxDepth = 1000
+
+[node name="treat spawner4" parent="." unique_id=62043091 instance=ExtResource("5_r14xg")]
+position = Vector2(1434, 1073)
+enemySpawns = Array[PackedScene]([ExtResource("10_hao2f"), ExtResource("11_n42lo"), ExtResource("10_hao2f"), ExtResource("12_gjr0r")])
+timerIntervul = 3.0
+maxDepth = 200
+
+[node name="Area2D" type="Area2D" parent="." unique_id=200440111]
+position = Vector2(-749, 98)
+script = ExtResource("13_uo288")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=817436700]
+position = Vector2(37.5, 398)
+shape = SubResource("RectangleShape2D_3owqy")

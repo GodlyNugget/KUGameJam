@@ -12,4 +12,5 @@ timer = NodePath("Timer")
 maxDepth = 0
 
 [node name="Timer" type="Timer" parent="." unique_id=1535820134]
+wait_time = 2.5
 autostart = true

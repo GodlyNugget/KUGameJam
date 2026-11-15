@@ -11,11 +11,15 @@ public partial class EnemySpawner : Node2D
     Timer timer;
 
 	[Export]
+    float timerIntervul;
+
+	[Export]
 	int maxDepth = 500; // an ofset from zero of where certain enemies can spawn
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+        timer.WaitTime = timerIntervul;
         timer.Timeout += OnEnd;
     }
 

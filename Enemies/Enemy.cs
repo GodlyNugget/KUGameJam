@@ -23,19 +23,15 @@ public partial class Enemy : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        Position += MoveDirection * MoveSpeed + new Vector2(Globals.GetPlayerSpeedX()/1500, 0); // whatever the starting speed is 
+        Position += MoveDirection * MoveSpeed * new Vector2(Globals.GetPlayerSpeedX()/1500, 0); // whatever the starting speed is 
     }
 
     private void OnBodyEntered(Node2D body)
     {
         if (body is player)
         {
-            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() - SpeedDecrement);
+            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * .90f);
             canvas.Modulate = new Color(1, 1, 1, 1);
-        }
-        else // if the despawn wall
-        {
-            
         }
         
         // play animation
