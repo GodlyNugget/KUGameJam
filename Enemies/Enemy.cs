@@ -38,11 +38,15 @@ public partial class Enemy : Area2D
             Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * SpeedDecrement);
             canvas.Modulate = new Color(1, 1, 1, 1);
 
-            spriteNew.Visible = !spriteNew.Visible;
-            spriteOld.Visible = !spriteOld.Visible;
+            if (spriteNew != null) { 
 
-            spriteNew.Play();
-            spriteOld.Stop();
+                spriteNew.Visible = !spriteNew.Visible;
+                spriteOld.Visible = !spriteOld.Visible;
+
+                spriteNew.Play();
+                spriteOld.Stop();
+
+            }
 
 
         }
