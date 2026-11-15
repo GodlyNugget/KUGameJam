@@ -8,6 +8,7 @@ radius = 130.75168
 
 [node name="Weird_enemy" type="Area2D" unique_id=225205814 node_paths=PackedStringArray("canvas")]
 script = ExtResource("1_3y8ua")
+MoveDirection = Vector2(-0.8, -0.2)
 canvas = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=347730790]

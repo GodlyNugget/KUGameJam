@@ -1,33 +1,67 @@
 [gd_scene format=3 uid="uid://bny34b5krfwkf"]
 
-[ext_resource type="Texture2D" uid="uid://bf4sb453xn7l4" path="res://sprites/muncher.png" id="1_ppk1s"]
-[ext_resource type="Texture2D" uid="uid://brkxh1eieldt" path="res://sprites/fake_treater.png" id="2_ywkkq"]
-[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="3_y3f8b"]
+[ext_resource type="Script" uid="uid://bs78oaj06vbxm" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk1.cs" id="1_em4b2"]
+[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="2_em4b2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppk1s"]
+atlas = ExtResource("2_em4b2")
+region = Rect2(0, 0, 284, 179)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywkkq"]
+atlas = ExtResource("2_em4b2")
+region = Rect2(284, 0, 284, 179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrwn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppk1s")
+}],
+"loop": 1,
+"name": &"Rock1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywkkq")
+}],
+"loop": 1,
+"name": &"Rock2",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrwn2"]
+radius = 76.0
+height = 186.0
 
 [node name="Chunk1" type="Node2D" unique_id=1790027824]
+script = ExtResource("1_em4b2")
 
-[node name="Boundaries" type="Node" parent="." unique_id=1936377697]
+[node name="Boundaries" type="Node2D" parent="." unique_id=1053334513]
 
 [node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=1033536484]
-position = Vector2(-975, -975)
+position = Vector2(0, -975)
 
 [node name="TopRight" type="Node2D" parent="Boundaries" unique_id=446294981]
-position = Vector2(3295, -975)
+position = Vector2(6129, -975)
 
 [node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=1799648198]
-position = Vector2(-975, 975)
+position = Vector2(0, 975)
 
 [node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=1570706621]
-position = Vector2(3295, 975)
+position = Vector2(6129, 975)
 
-[node name="Muncher" type="Sprite2D" parent="." unique_id=1526050235]
-position = Vector2(-538, 304)
-texture = ExtResource("1_ppk1s")
+[node name="Display" type="Node2D" parent="." unique_id=1436982558]
 
-[node name="FakeTreater" type="Sprite2D" parent="." unique_id=1716257509]
-position = Vector2(781, -691)
-texture = ExtResource("2_ywkkq")
+[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=1374407489]
+position = Vector2(0, 1471)
+sprite_frames = SubResource("SpriteFrames_xrwn2")
+animation = &"Rock1"
 
-[node name="BigTreat" type="Sprite2D" parent="." unique_id=1980922368]
-position = Vector2(2045, 405)
-texture = ExtResource("3_y3f8b")
+[node name="Area2D" type="Area2D" parent="ObstacleBase" unique_id=2092961275]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleBase/Area2D" unique_id=209436565]
+position = Vector2(3, 13)
+shape = SubResource("CapsuleShape2D_xrwn2")
+
+[connection signal="body_entered" from="ObstacleBase/Area2D" to="." method="PlayerHitTerrain"]

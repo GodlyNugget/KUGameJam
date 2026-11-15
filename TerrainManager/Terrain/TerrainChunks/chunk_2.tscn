@@ -1,40 +1,62 @@
 [gd_scene format=3 uid="uid://jlp074qs43it"]
 
-[ext_resource type="Texture2D" uid="uid://cjmq632xi3b2j" path="res://sprites/big treat.png" id="1_grk6s"]
-[ext_resource type="Texture2D" uid="uid://dahyti0x7g7as" path="res://sprites/jelly.png" id="2_q5lu2"]
-[ext_resource type="Texture2D" uid="uid://2wi3i6okv3ll" path="res://sprites/crabjawn.png" id="3_chr1k"]
-[ext_resource type="Texture2D" uid="uid://bafwqs12706jf" path="res://sprites/slow.png" id="4_0mih8"]
+[ext_resource type="Script" uid="uid://c1gp5nhsc685" path="res://TerrainManager/Terrain/TerrainChunkScripts/Chunk2.cs" id="1_7p6cn"]
+[ext_resource type="Texture2D" uid="uid://d2gh03hgo5480" path="res://sprites/terrain-Sheet.png" id="1_up7j5"]
+[ext_resource type="Texture2D" uid="uid://cm0cljxiq5ao" path="res://icon.svg" id="2_grk6s"]
 
-[node name="Chunk2" type="Node2D" unique_id=1261258572]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywkkq"]
+atlas = ExtResource("1_up7j5")
+region = Rect2(284, 0, 284, 179)
 
-[node name="Boundaries" type="Node" parent="." unique_id=58766971]
+[sub_resource type="SpriteFrames" id="SpriteFrames_doejt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_grk6s")
+}],
+"loop": 1,
+"name": &"Placeholder1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywkkq")
+}],
+"loop": 1,
+"name": &"Rock2",
+"speed": 5.0
+}]
 
-[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=915684712]
-position = Vector2(-975, -975)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p6cn"]
+radius = 76.0
+height = 186.0
 
-[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=840723400]
-position = Vector2(1890, -975)
+[node name="Chunk2" type="Node2D" unique_id=1756595490]
+script = ExtResource("1_7p6cn")
 
-[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=1022369222]
-position = Vector2(-975, 975)
+[node name="Boundaries" type="Node2D" parent="." unique_id=1974548352]
 
-[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=751326506]
-position = Vector2(1890, 975)
+[node name="TopLeft" type="Node2D" parent="Boundaries" unique_id=417859030]
+position = Vector2(0, -975)
 
-[node name="Display" type="Node2D" parent="." unique_id=2125314673]
+[node name="TopRight" type="Node2D" parent="Boundaries" unique_id=1783212611]
+position = Vector2(6129, -975)
 
-[node name="BigTreat" type="Sprite2D" parent="." unique_id=161011698]
-position = Vector2(-523, -664)
-texture = ExtResource("1_grk6s")
+[node name="BottomLeft" type="Node2D" parent="Boundaries" unique_id=914747349]
+position = Vector2(0, 975)
 
-[node name="Jelly" type="Sprite2D" parent="." unique_id=2002350032]
-position = Vector2(-45, 581)
-texture = ExtResource("2_q5lu2")
+[node name="BottomRight" type="Node2D" parent="Boundaries" unique_id=601514881]
+position = Vector2(6129, 975)
 
-[node name="Crabjawn" type="Sprite2D" parent="." unique_id=443806179]
-position = Vector2(1407, 801)
-texture = ExtResource("3_chr1k")
+[node name="Display" type="Node2D" parent="." unique_id=144225019]
 
-[node name="Slow" type="Sprite2D" parent="." unique_id=301399281]
-position = Vector2(869, 241)
-texture = ExtResource("4_0mih8")
+[node name="ObstacleBase" type="AnimatedSprite2D" parent="." unique_id=1492867781]
+position = Vector2(0, 1471)
+sprite_frames = SubResource("SpriteFrames_doejt")
+animation = &"Placeholder1"
+
+[node name="Area2D" type="Area2D" parent="ObstacleBase" unique_id=1885039050]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleBase/Area2D" unique_id=858841171]
+position = Vector2(3, 13)
+shape = SubResource("CapsuleShape2D_7p6cn")

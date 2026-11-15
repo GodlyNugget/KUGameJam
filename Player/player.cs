@@ -70,7 +70,7 @@ public partial class player : CharacterBody2D
 
         StuckUnderWaterTimer.Timeout += () =>
         {
-            GD.Print("TIMER FIRED");
+            //GD.Print("TIMER FIRED");
             CanSwim = true;
         };
 
@@ -103,7 +103,7 @@ public partial class player : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 
-		Globals.SetPlayerSpeedX((float)2000);
+		//Globals.SetPlayerSpeedX((float)2000);
 		MoveAndSlide();
 
         // Add the gravity.
@@ -113,14 +113,8 @@ public partial class player : CharacterBody2D
         //GD.Print(AboveWater);
         //GD.Print(WaterLevel - WaterLevelOffset);
 
-        GD.Print("CanGlide: " + CanGlide);
-        GD.Print("GlideEnergy Energy: " + GlideEnergy);
-        //GD.Print(GlidingDuration);
-       // GD.Print(GlidingCooldown);
-        //GD.Print("GlidingDuration: " + GlidingDuration.IsStopped());
-        //GD.Print("GlidingCooldown: " + GlidingCooldown.IsStopped());
-        //GD.Print("Glyding Time Left: " + GlidingDuration.TimeLeft);
-        //GD.Print("Glyding Cooldown Timet: " + GlidingCooldown.TimeLeft);
+        //GD.Print("player y position:" + this.GlobalPosition.Y);
+		//GD.Print("player y position:" + this.GlobalPosition.Y);
 
         if (this.GlobalPosition.Y <= WaterLevel)
 		{
@@ -131,7 +125,7 @@ public partial class player : CharacterBody2D
                 //splash animation, looking at you here Tatiana
 
                 velocity.Y += JumpVelocity / 2;
-                GD.Print("Jump Splash");
+                //GD.Print("Jump Splash");
 
             }
 

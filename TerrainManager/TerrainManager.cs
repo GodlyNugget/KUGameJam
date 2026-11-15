@@ -14,8 +14,7 @@ public partial class TerrainManager : Node2D
 		CurrentTerrain = PickNextTerrain();
 		AddChild(CurrentTerrain);
 		NextTerrain = PickNextTerrain();
-		//The 1254 is hardcoded for the width of the current terrains. Will need to change for variating terrain sizes.
-		NextTerrain.Position = new Vector2(1254, 0);
+		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
 	}
 
@@ -35,13 +34,14 @@ public partial class TerrainManager : Node2D
 		//Create new Terrain
 		CurrentTerrain = NextTerrain;
 		NextTerrain = PickNextTerrain();
-		NextTerrain.Position = new Vector2(1254, 0);
+		//Set the new Terrain's position based on the width of the current one
+		NextTerrain.SetNextPosition(CurrentTerrain);
 		AddChild(NextTerrain);
 	}
 
 	private Terrain PickNextTerrain()
 	{
-		//Create a new Terrain. Terrain scene should randomly pick a level design
+		//Create a new Terrain
 		return (Terrain)ResourceLoader.Load<PackedScene>("res://TerrainManager/Terrain/terrain.tscn").Instantiate();
 	}
 }

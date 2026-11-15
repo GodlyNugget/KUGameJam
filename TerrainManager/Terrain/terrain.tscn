@@ -6,7 +6,7 @@
 script = ExtResource("1_3iwhe")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=83147177]
-position = Vector2(-975, -975)
+position = Vector2(0, -975)
 rect = Rect2(0, 0, 1950, 1950)
 
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="EmitExitedScreen"]

@@ -77,3 +77,5 @@ offset_bottom = 239.0
 [node name="Quit_Button" type="Button" parent="CanvasLayer/Lose_Screen/MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=250530412]
 layout_mode = 2
 text = "replay?"
+[node name="Player" parent="." unique_id=1242398821 instance=ExtResource("1_bk3v5")]
+position = Vector2(625, 0)
