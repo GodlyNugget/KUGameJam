@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cxtan5lbj87d5" path="res://Game/Barrier.cs" id="13_uo288"]
 [ext_resource type="Script" uid="uid://dfnflv4iols17" path="res://Game/Lose_Screen.cs" id="14_pyxum"]
 [ext_resource type="Texture2D" uid="uid://defu4qu3q0m3i" path="res://sprites/ship.png" id="14_rgrvi"]
+[ext_resource type="Script" uid="uid://c8thax7e77xef" path="res://Game/DistanceTraveled.cs" id="15_pyxum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(95, 2498)
@@ -42,19 +43,16 @@ enemySpawns = Array[PackedScene]([ExtResource("8_745b4"), ExtResource("9_d22mq")
 [node name="treat spawner" parent="." unique_id=1978648988 instance=ExtResource("5_r14xg")]
 position = Vector2(1512, -4)
 enemySpawns = Array[PackedScene]([ExtResource("10_hao2f"), ExtResource("11_n42lo"), ExtResource("10_hao2f")])
-timerIntervul = 1.0
 maxDepth = 1000
 
 [node name="treat spawner3" parent="." unique_id=201352000 instance=ExtResource("5_r14xg")]
 position = Vector2(1365, -14)
 enemySpawns = Array[PackedScene]([ExtResource("10_hao2f")])
-timerIntervul = 1.0
 maxDepth = 500
 
 [node name="treat spawner2" parent="." unique_id=1232873924 instance=ExtResource("5_r14xg")]
 position = Vector2(1439, 765)
 enemySpawns = Array[PackedScene]([ExtResource("10_hao2f"), ExtResource("11_n42lo"), ExtResource("10_hao2f"), ExtResource("12_gjr0r")])
-timerIntervul = 1.0
 maxDepth = 1000
 
 [node name="treat spawner4" parent="." unique_id=62043091 instance=ExtResource("5_r14xg")]
@@ -79,9 +77,10 @@ position = Vector2(-260, 251)
 scale = Vector2(2.3547714, 2.3547714)
 texture = ExtResource("14_rgrvi")
 
-[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "StuckUnderWaterTimer") instance=ExtResource("4_y3828")]
+[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("4_y3828")]
 position = Vector2(680, -117)
 LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
+FeetTraveled = NodePath("../CanvasLayer/DistanceTraveled")
 StuckUnderWaterTimer = NodePath("UnderWaterTimer")
 
 [node name="GlideTime" type="Timer" parent="Player" unique_id=1498888409]
@@ -92,8 +91,37 @@ StuckUnderWaterTimer = NodePath("UnderWaterTimer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=874307995]
 
+[node name="DistanceTraveled" type="Control" parent="CanvasLayer" unique_id=325713513 node_paths=PackedStringArray("_distanceTraveled")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 594.0
+offset_right = 205.0
+offset_bottom = 636.0
+script = ExtResource("15_pyxum")
+_distanceTraveled = NodePath("MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DistanceTraveled" unique_id=651889224]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.75000006
+anchor_bottom = 1.307
+offset_left = 12.0
+offset_top = -5.0
+offset_right = -1.5258789e-05
+offset_bottom = -4.991993
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=1979699537]
+layout_mode = 2
+color = Color(0.7607843, 0.76862746, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/DistanceTraveled/MarginContainer" unique_id=735969807]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "0 Feet "
+horizontal_alignment = 1
+
 [node name="Lose_Screen" type="Control" parent="CanvasLayer" unique_id=633887471 node_paths=PackedStringArray("_restartButton")]
-visible = false
 layout_mode = 3
 anchor_left = 0.224
 anchor_top = 0.256
