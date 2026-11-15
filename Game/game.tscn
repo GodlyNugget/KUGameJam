@@ -4,49 +4,45 @@
 [ext_resource type="PackedScene" uid="uid://dx1h3lacyrccp" path="res://Player/player.tscn" id="1_bk3v5"]
 [ext_resource type="PackedScene" uid="uid://bxo58rlxvbt13" path="res://TerrainManager/terrain_manager.tscn" id="3_7raqb"]
 [ext_resource type="Script" uid="uid://dfnflv4iols17" path="res://Game/Lose_Screen.cs" id="5_fwxkx"]
+[ext_resource type="PackedScene" uid="uid://bpc53navhwupd" path="res://Enemies/enemy_spawner.tscn" id="5_glinl"]
+[ext_resource type="PackedScene" uid="uid://cylt3eo1yp882" path="res://Enemies/lurker_enemy.tscn" id="6_72g0p"]
+[ext_resource type="PackedScene" uid="uid://bbyxns3l1g2ru" path="res://Enemies/speedy_enemy.tscn" id="7_4lqr4"]
+[ext_resource type="PackedScene" uid="uid://de5bf37k0kfey" path="res://Enemies/grouded_enemy.tscn" id="8_qlwvw"]
+[ext_resource type="PackedScene" uid="uid://dmkrvm7v7tqks" path="res://Enemies/crab_jawn.tscn" id="9_rpdke"]
+[ext_resource type="PackedScene" uid="uid://dne2p8emjfh1m" path="res://TreatBoosts/LittleTreat.tscn" id="10_33n3b"]
+[ext_resource type="PackedScene" uid="uid://baf1efcesruvr" path="res://TreatBoosts/MediumTreat.tscn" id="11_rxmp4"]
+[ext_resource type="PackedScene" uid="uid://bn12ey2sms1av" path="res://TreatBoosts/BigTreat.tscn" id="12_qyr8x"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vqgxv"]
 
 [node name="Game" type="Node2D" unique_id=1913227579]
 script = ExtResource("1_7raqb")
 
-[node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("3_7raqb")]
-position = Vector2(0, 264)
-
-[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "StuckUnderWaterTimer", "GlidingCooldown", "GlidingDuration") instance=ExtResource("1_bk3v5")]
-LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
-StuckUnderWaterTimer = NodePath("UnderWaterTimer")
-GlidingCooldown = NodePath("GlideCooldown")
-GlidingDuration = NodePath("GlideTime")
-
-[node name="GlideTime" type="Timer" parent="Player" unique_id=1079421776]
-
-[node name="GlideCooldown" type="Timer" parent="Player" unique_id=785006702]
-
-[node name="UnderWaterTimer" type="Timer" parent="Player" unique_id=351804931]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=467256491]
 
 [node name="Lose_Screen" type="Control" parent="CanvasLayer" unique_id=57208886 node_paths=PackedStringArray("_restartButton")]
-visible = false
 layout_mode = 3
-anchor_left = 0.224
-anchor_top = 0.256
-anchor_right = 0.726
-anchor_bottom = 0.671
-offset_left = -0.04800415
-offset_top = 0.11199951
-offset_right = -0.35198975
-offset_bottom = 0.19198608
+anchor_left = 0.15900001
+anchor_top = -0.53900003
+anchor_right = 0.80100006
+anchor_bottom = 0.147
+offset_left = -17.168015
+offset_top = 460.27203
+offset_right = 143.24792
+offset_bottom = 506.74402
 script = ExtResource("5_fwxkx")
 _restartButton = NodePath("MarginContainer/VBoxContainer/Control/MarginContainer/Quit_Button")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Lose_Screen" unique_id=2032762605]
-layout_mode = 0
-offset_left = -27.0
-offset_top = -51.0
-offset_right = 724.0
-offset_bottom = 381.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.063
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.34799957
+offset_top = -1.5500145
+offset_right = -88.0
+offset_bottom = -62.0
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Lose_Screen/MarginContainer" unique_id=1270763985]
 position = Vector2(376.25003, 216.75)
@@ -77,5 +73,54 @@ offset_bottom = 239.0
 [node name="Quit_Button" type="Button" parent="CanvasLayer/Lose_Screen/MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=250530412]
 layout_mode = 2
 text = "replay?"
-[node name="Player" parent="." unique_id=1242398821 instance=ExtResource("1_bk3v5")]
-position = Vector2(625, 0)
+
+[node name="TerrainManager" parent="." unique_id=822719518 instance=ExtResource("3_7raqb")]
+position = Vector2(0, 264)
+
+[node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("LoseScreen", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
+position = Vector2(577, -27)
+LoseScreen = NodePath("../CanvasLayer/Lose_Screen")
+StuckUnderWaterTimer = NodePath("UnderWaterTimer")
+
+[node name="GlideTime" type="Timer" parent="Player" unique_id=1079421776]
+
+[node name="GlideCooldown" type="Timer" parent="Player" unique_id=785006702]
+
+[node name="UnderWaterTimer" type="Timer" parent="Player" unique_id=351804931]
+
+[node name="EnemySpawner" parent="." unique_id=261364985 instance=ExtResource("5_glinl")]
+position = Vector2(1271, 37)
+maxDepth = 500
+
+[node name="EnemySpawner2" parent="." unique_id=1902455159 instance=ExtResource("5_glinl")]
+position = Vector2(1284, 740)
+enemySpawns = Array[PackedScene]([ExtResource("6_72g0p"), ExtResource("7_4lqr4")])
+maxDepth = 1000
+
+[node name="EnemySpawner3" parent="." unique_id=443741721 instance=ExtResource("5_glinl")]
+position = Vector2(1284, 1262)
+enemySpawns = Array[PackedScene]([ExtResource("8_qlwvw"), ExtResource("9_rpdke")])
+
+[node name="treat spawner" parent="." unique_id=939676070 instance=ExtResource("5_glinl")]
+position = Vector2(1512, -4)
+enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b")])
+timerIntervul = 1.0
+maxDepth = 1000
+
+[node name="treat spawner3" parent="." unique_id=885624705 instance=ExtResource("5_glinl")]
+position = Vector2(1365, -14)
+enemySpawns = Array[PackedScene]([ExtResource("10_33n3b")])
+timerIntervul = 1.0
+maxDepth = 500
+
+[node name="treat spawner2" parent="." unique_id=1680514423 instance=ExtResource("5_glinl")]
+position = Vector2(1439, 765)
+enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b"), ExtResource("12_qyr8x")])
+timerIntervul = 1.0
+maxDepth = 1000
+
+[node name="treat spawner4" parent="." unique_id=1895168367 instance=ExtResource("5_glinl")]
+position = Vector2(1434, 1073)
+enemySpawns = Array[PackedScene]([ExtResource("10_33n3b"), ExtResource("11_rxmp4"), ExtResource("10_33n3b"), ExtResource("12_qyr8x")])
+timerIntervul = 3.0
+maxDepth = 200

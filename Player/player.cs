@@ -58,7 +58,7 @@ public partial class player : CharacterBody2D
 
     public override void _Ready()
 	{
-        LoseScreen.Position = this.Position;
+        //LoseScreen.Position = this.Position;
 
         //GD.Print("ran ready");
         Vector2 velocity = new Vector2();
@@ -114,7 +114,11 @@ public partial class player : CharacterBody2D
         //GD.Print(WaterLevel - WaterLevelOffset);
 
         //GD.Print("player y position:" + this.GlobalPosition.Y);
-		//GD.Print("player y position:" + this.GlobalPosition.Y);
+        //GD.Print("player y position:" + this.GlobalPosition.Y);
+
+        GD.Print("CanGlide: " + CanGlide);
+        GD.Print("GlideEnergy: " + GlideEnergy);
+
 
         if (this.GlobalPosition.Y <= WaterLevel)
 		{

@@ -25,6 +25,9 @@ public partial class Lose_Screen : Control
     private void RetryGame()
     {
         GetTree().ReloadCurrentScene();
+        Globals.SetPlayerSpeedX(1500);
+        Globals.SetBoatSpeedX(1500);
+
     }
 
     // Called when the node enters the scene tree for the first time.
