@@ -10,6 +10,9 @@ public partial class Treat : Area2D
     // get child smth to only rotate the sprite and not the area
     // on enter it frees itself
 
+    [Export]
+    float speedBostPercent = 1.08f;
+
     public override void _Ready()
     {
         BodyEntered += OnBodyEntered;
@@ -25,7 +28,7 @@ public partial class Treat : Area2D
     {
         if (body is player)
         {
-            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * 1.08f); // make an export
+            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * speedBostPercent); // make an export
             QueueFree();
         }
 

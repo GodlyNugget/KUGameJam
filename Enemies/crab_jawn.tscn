@@ -1,22 +1,76 @@
 [gd_scene format=3 uid="uid://dmkrvm7v7tqks"]
 
-[ext_resource type="Texture2D" uid="uid://2wi3i6okv3ll" path="res://sprites/crabjawn.png" id="1_57dp0"]
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_bo4wm"]
+[ext_resource type="Texture2D" uid="uid://ba5npmlnbn77r" path="res://sprites/crab.png" id="2_bo4wm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eicn"]
+atlas = ExtResource("2_bo4wm")
+region = Rect2(391, 0, 391, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2pnd"]
+atlas = ExtResource("2_bo4wm")
+region = Rect2(0, 0, 391, 543)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgrjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eicn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2pnd")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxova"]
+atlas = ExtResource("2_bo4wm")
+region = Rect2(782, 0, 391, 543)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4lh7"]
+atlas = ExtResource("2_bo4wm")
+region = Rect2(1173, 0, 391, 543)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyi48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxova")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4lh7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
-size = Vector2(70, 379)
+size = Vector2(70, 346)
 
-[node name="Crab_jawn" type="Area2D" unique_id=1247859814 node_paths=PackedStringArray("canvas")]
+[node name="Crab_jawn" type="Area2D" unique_id=1247859814 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_bo4wm")
 MoveSpeed = 8.0
-SpeedMdifier = 15.0
-canvas = NodePath("Sprite2D")
+spriteOld = NodePath("Sprite2D")
+spriteNew = NodePath("AnimatedSprite2D")
+canvas = NodePath(".")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1302468992]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=2139439680]
 position = Vector2(42.999966, -68)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_57dp0")
+sprite_frames = SubResource("SpriteFrames_kgrjj")
+autoplay = "default"
+frame_progress = 0.28930047
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=110055208]
+visible = false
+position = Vector2(49.999992, -171.34879)
+scale = Vector2(0.61253196, 0.86796016)
+sprite_frames = SubResource("SpriteFrames_wyi48")
+frame_progress = 0.101068065
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766533875]
-position = Vector2(1, -248.5)
+position = Vector2(1, -168)
 shape = SubResource("RectangleShape2D_3owqy")

@@ -3,19 +3,65 @@
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_0exv3"]
 [ext_resource type="Texture2D" uid="uid://rl152dhlivad" path="res://sprites/mine.png" id="1_k0442"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0exv3"]
+atlas = ExtResource("1_k0442")
+region = Rect2(0, 0, 213, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx45d"]
+atlas = ExtResource("1_k0442")
+region = Rect2(213, 0, 213, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhl23"]
+atlas = ExtResource("1_k0442")
+region = Rect2(426, 0, 213, 298)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lp65"]
+atlas = ExtResource("1_k0442")
+region = Rect2(639, 0, 213, 298)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgrjj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0exv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx45d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhl23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lp65")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_3owqy"]
-radius = 125.1
+radius = 75.802376
 
-[node name="Grouded_enemy" type="Area2D" unique_id=1983656021 node_paths=PackedStringArray("canvas")]
+[node name="Grouded_enemy" type="Area2D" unique_id=1983656021 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_0exv3")
-SpeedMdifier = 20.0
-canvas = NodePath("Sprite2D")
+MoveSpeed = 9.0
+spriteOld = NodePath("Sprite2D")
+spriteNew = NodePath("actionAnimation")
+SpeedDecrement = 0.8
+canvas = NodePath(".")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=947787332]
-position = Vector2(0, -269)
-scale = Vector2(2, 2)
-texture = ExtResource("1_k0442")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=666815332]
+position = Vector2(-3.0000005, -187)
+scale = Vector2(1.2799995, 1.2800012)
+sprite_frames = SubResource("SpriteFrames_kgrjj")
+frame_progress = 0.5629667
+
+[node name="actionAnimation" type="AnimatedSprite2D" parent="." unique_id=1275950779]
+visible = false
+position = Vector2(-3, -187)
+scale = Vector2(1.28, 1.28)
+sprite_frames = SubResource("SpriteFrames_kgrjj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373445540]
-position = Vector2(0, -410)
+position = Vector2(0, -269)
 shape = SubResource("CircleShape2D_3owqy")

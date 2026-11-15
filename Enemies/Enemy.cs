@@ -10,7 +10,12 @@ public partial class Enemy : Area2D
     private float MoveSpeed = 10;
 
     [Export]
-    private float SpeedDecrement = 10; // what the speed would be subtracted by
+    private AnimatedSprite2D spriteOld;
+    [Export]
+    private AnimatedSprite2D spriteNew;
+
+    [Export]
+    private float SpeedDecrement = .9f; // what the speed would be subtracted by
 
     [Export]
     private CanvasItem canvas;
@@ -30,11 +35,19 @@ public partial class Enemy : Area2D
     {
         if (body is player)
         {
-            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * .90f);
+            Globals.SetPlayerSpeedX(Globals.GetPlayerSpeedX() * SpeedDecrement);
             canvas.Modulate = new Color(1, 1, 1, 1);
+
+            spriteNew.Visible = !spriteNew.Visible;
+            spriteOld.Visible = !spriteOld.Visible;
+
+            spriteNew.Play();
+            spriteOld.Stop();
+
+
         }
         
-        // play animation
+        //
 
     }
 

@@ -6,8 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3owqy"]
 size = Vector2(168, 426)
 
-[node name="Lurker_enemy" type="Area2D" unique_id=1286623691 node_paths=PackedStringArray("canvas")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgrjj"]
+
+[node name="Lurker_enemy" type="Area2D" unique_id=1286623691 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_frkk0")
+MoveSpeed = 7.0
+spriteOld = NodePath("AnimatedSprite2D")
+spriteNew = NodePath("AnimatedSprite2D")
+SpeedDecrement = 0.85
 canvas = NodePath("Sprite2D")
 
 [node name="Area2D" type="CollisionShape2D" parent="." unique_id=294353242]
@@ -19,3 +25,6 @@ shape = SubResource("RectangleShape2D_3owqy")
 modulate = Color(1, 1, 1, 0.19215687)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_e4470")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1651132573]
+sprite_frames = SubResource("SpriteFrames_kgrjj")

@@ -3,20 +3,41 @@
 [ext_resource type="Texture2D" uid="uid://c77gjsd70bnsl" path="res://sprites/fast_fish.png" id="1_kimk7"]
 [ext_resource type="Script" uid="uid://bcakqr27oyudg" path="res://Enemies/Enemy.cs" id="1_w37mc"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w37mc"]
+atlas = ExtResource("1_kimk7")
+region = Rect2(0, 0, 699, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wyi48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w37mc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3owqy"]
 radius = 36.0
 height = 542.0
 
-[node name="Speedy_enemy" type="Area2D" unique_id=982543846 node_paths=PackedStringArray("canvas")]
+[node name="Speedy_enemy" type="Area2D" unique_id=982543846 node_paths=PackedStringArray("spriteOld", "spriteNew", "canvas")]
 script = ExtResource("1_w37mc")
-canvas = NodePath("Sprite2D")
+MoveSpeed = 30.0
+spriteOld = NodePath("AnimatedSprite2D")
+spriteNew = NodePath("AnimatedSprite2D")
+SpeedDecrement = 0.85
+canvas = NodePath(".")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002599289]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=316147150]
 position = Vector2(256, -5)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_kimk7")
+sprite_frames = SubResource("SpriteFrames_wyi48")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884561712]
 position = Vector2(270, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_3owqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1408057588]
