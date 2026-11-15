@@ -4,15 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://cabf2d0x1h2a5" path="res://sprites/flyingfih.png" id="2_4ntmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrwn2"]
-size = Vector2(128, 128)
+size = Vector2(144, 62)
 
-[node name="Player" type="CharacterBody2D" unique_id=1242398821]
+[node name="Player" type="CharacterBody2D" unique_id=1242398821 groups=["Player"]]
 script = ExtResource("1_4ntmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597792614]
-position = Vector2(-51, -2)
-scale = Vector2(0.5336134, 0.53361344)
+position = Vector2(-288, 0)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=534831108]
+position = Vector2(-288, 0)
 shape = SubResource("RectangleShape2D_xrwn2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1546958647]
+limit_top = -1100
+limit_bottom = 1050
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0

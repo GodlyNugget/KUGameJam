@@ -15,6 +15,7 @@ script = ExtResource("1_kcer5")
 [node name="Display" type="Node2D" parent="." unique_id=571690490]
 
 [node name="WaterGradient" type="Sprite2D" parent="Display" unique_id=1453124597]
+position = Vector2(-4.7683716e-07, 1.6940659e-21)
 rotation = -1.5707964
 scale = Vector2(7.617, 1252)
 texture = SubResource("GradientTexture1D_kcer5")
