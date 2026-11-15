@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://d1jd1anww7662" path="res://Game/FiletinFishMMTheme1.mp3" id="19_qyr8x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyr8x"]
-size = Vector2(34, 1775.25)
+size = Vector2(1139, 1775.25)
 
 [node name="Game" type="Node2D" unique_id=1913227579]
 script = ExtResource("1_7raqb")
@@ -175,8 +175,10 @@ theme_override_font_sizes/font_size = 23
 text = "0 Feet "
 horizontal_alignment = 1
 
-[node name="TerrainManager" parent="." unique_id=502845582 instance=ExtResource("3_7raqb")]
+[node name="TerrainManager" parent="." unique_id=502845582 node_paths=PackedStringArray("winScreen") instance=ExtResource("3_7raqb")]
 position = Vector2(0, 264)
+winTerrainAmmount = 10
+winScreen = NodePath("../CanvasLayer/Win_Screen")
 
 [node name="Player" parent="." unique_id=1242398821 node_paths=PackedStringArray("Damagedtimer", "LoseScreen", "FeetTraveled", "StuckUnderWaterTimer") instance=ExtResource("1_bk3v5")]
 position = Vector2(577, -27)
@@ -234,7 +236,7 @@ scale = Vector2(2.3547714, 2.3547714)
 texture = ExtResource("18_rxmp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boat" unique_id=572319724]
-position = Vector2(-309, 836)
+position = Vector2(-861.5, 836)
 shape = SubResource("RectangleShape2D_qyr8x")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=734003951]
