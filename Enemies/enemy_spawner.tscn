@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bpc53navhwupd"]
+
+[ext_resource type="Script" uid="uid://oo0nmwj8m0pa" path="res://Enemies/EnemySpawner.cs" id="1_nrau0"]
+[ext_resource type="PackedScene" uid="uid://ri0g15skhydl" path="res://Enemies/chomper_enemy.tscn" id="2_6fq3q"]
+[ext_resource type="PackedScene" uid="uid://cylt3eo1yp882" path="res://Enemies/lurker_enemy.tscn" id="3_oibxw"]
+[ext_resource type="PackedScene" uid="uid://cq7xdgvb6753m" path="res://Enemies/weird_enemy.tscn" id="4_585pq"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=261364985 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_nrau0")
+enemySpawns = Array[PackedScene]([ExtResource("2_6fq3q"), ExtResource("3_oibxw"), ExtResource("4_585pq")])
+timer = NodePath("Timer")
+maxDepth = 0
+
+[node name="Timer" type="Timer" parent="." unique_id=1535820134]
+autostart = true

@@ -23,7 +23,7 @@ public partial class Enemy : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        Position += MoveDirection * MoveSpeed * (Globals.GetPlayerSpeedX()*.1f); 
+        Position += MoveDirection * MoveSpeed + new Vector2(Globals.GetPlayerSpeedX()/1500, 0); // whatever the starting speed is 
     }
 
     private void OnBodyEntered(Node2D body)
@@ -35,7 +35,7 @@ public partial class Enemy : Area2D
         }
         else // if the despawn wall
         {
-            QueueFree();
+            
         }
         
         // play animation
