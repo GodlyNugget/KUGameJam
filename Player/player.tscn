@@ -6,11 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrwn2"]
 size = Vector2(128, 128)
 
-[node name="Player" type="CharacterBody2D" unique_id=1242398821]
+[node name="Player" type="CharacterBody2D" unique_id=1242398821 node_paths=PackedStringArray("StuckUnderWaterTimer")]
 script = ExtResource("1_4ntmi")
+StuckUnderWaterTimer = NodePath("StuckUnderWaterTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597792614]
 texture = ExtResource("2_btcbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=534831108]
 shape = SubResource("RectangleShape2D_xrwn2")
+
+[node name="StuckUnderWaterTimer" type="Timer" parent="." unique_id=663272231]
+wait_time = 10.0
+one_shot = true
