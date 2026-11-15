@@ -2,12 +2,18 @@
 
 [ext_resource type="Script" uid="uid://c7t45k3pshiy" path="res://Player/player.cs" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://cabf2d0x1h2a5" path="res://sprites/flyingfih.png" id="2_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://qe0hrcy7ibq4" path="res://sprites/fly.png" id="3_gwnis"]
+[ext_resource type="Texture2D" uid="uid://8eaylk0wmnrn" path="res://sprites/hurt.new.png" id="4_k53q1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrwn2"]
 size = Vector2(144, 62)
 
-[node name="Player" type="CharacterBody2D" unique_id=1242398821]
+[node name="Player" type="CharacterBody2D" unique_id=1242398821 node_paths=PackedStringArray("FishSprite")]
 script = ExtResource("1_4ntmi")
+FishSprite = NodePath("Sprite2D")
+DefaultSprite = ExtResource("2_4ntmi")
+GlidingSprite = ExtResource("3_gwnis")
+DamagedSprite = ExtResource("4_k53q1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1597792614]
 position = Vector2(-288, 0)
